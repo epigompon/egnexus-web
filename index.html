@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGNEXUS - Ingeniería de Crecimiento</title>
+    <!-- CDN Estable de Tailwind CSS v3 -->
+    <script src="https://tailwindcss.com"></script>
+    <link rel="preconnect" href="https://googleapis.com" />
+    <link rel="preconnect" href="https://gstatic.com" crossorigin />
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col justify-between">
+
+    <!-- Navegación -->
+    <nav class="border-b border-slate-800 bg-slate-900/50 backdrop-blur sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-emerald-500 rounded flex items-center justify-center font-bold text-slate-950">E</div>
+                <span class="font-bold tracking-wider text-lg">EG<span class="text-emerald-400">NEXUS</span></span>
+            </div>
+            <a href="#test-section" class="text-sm bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-400 border border-emerald-500/30 px-4 py-2 rounded-full transition">
+                Diagnóstico de Datos
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="max-w-6xl mx-auto px-4 py-20 grid md:grid-cols-1 gap-12 relative overflow-hidden">
+        <div class="space-y-6 max-w-3xl">
+            <div class="inline-flex items-center gap-2 text-xs font-semibold tracking-widest text-emerald-400 bg-emerald-500/10 px-3 py-1 rounded-full border border-emerald-500/20">
+                MARKETING DE DATOS &amp; INTELIGENCIA ARTIFICIAL
+            </div>
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-white">
+                No hacemos marketing digital.<br /> Diseñamos <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">ingeniería de crecimiento</span> basada en datos e IA.
+            </h1>
+            <p class="text-slate-400 text-lg leading-relaxed">
+                Unificamos inteligencia de negocios, analítica predictiva e infraestructura tecnológica para transformar la captación de clientes de alto valor.
+            </p>
+            <div class="flex flex-wrap gap-4 pt-4">
+                <a href="#test-section" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold px-6 py-3 rounded-lg transition shadow-lg shadow-emerald-500/20">
+                    Iniciar Test de Madurez Digital
+                </a>
+                <a href="#pilares" class="border border-slate-700 hover:border-slate-500 text-slate-300 px-6 py-3 rounded-lg transition">
+                    Ver Pilares de Infraestructura
+                </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-12 border-t border-slate-900">
+                <div class="p-4 bg-slate-900/40 rounded-xl border border-slate-900">
+                    <div class="text-2xl font-bold text-white">3.4x</div>
+                    <div class="text-xs text-slate-400">Atribución Predictiva ROAS</div>
+                </div>
+                <div class="p-4 bg-slate-900/40 rounded-xl border border-slate-900">
+                    <div class="text-2xl font-bold text-white">100%</div>
+                    <div class="text-xs text-slate-400">Gobierno de Datos Propietario</div>
+                </div>
+                <div class="p-4 bg-slate-900/40 rounded-xl border border-slate-900">
+                    <div class="text-2xl font-bold text-white">Enterprise</div>
+                    <div class="text-xs text-slate-400">Infraestructura TI Ready</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pilares Section -->
+    <section id="pilares" class="bg-slate-900/30 border-y border-slate-900 py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="mb-12">
+                <h2 class="text-sm font-semibold tracking-wider text-emerald-400 uppercase">Infraestructura de Crecimiento</h2>
+                <h3 class="text-3xl font-bold text-white mt-2">Servicios disruptivos impulsados por tecnología</h3>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 bg-slate-900/60 rounded-2xl border border-slate-800/50 hover:border-emerald-500/30 transition group">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center font-bold mb-4 group-hover:bg-emerald-500 group-hover:text-slate-950 transition">01</div>
+                    <h4 class="text-xl font-bold text-white mb-2">1. Optimización con Analítica Predictiva</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Modelos matemáticos cuantitativos que simulan la atribución y rentabilidad de pauta antes de ejecutar presupuesto publicitario.</p>
+                </div>
+                <div class="p-6 bg-slate-900/60 rounded-2xl border border-slate-800/50 hover:border-emerald-500/30 transition group">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center font-bold mb-4 group-hover:bg-emerald-500 group-hover:text-slate-950 transition">02</div>
+                    <h4 class="text-xl font-bold text-white mb-2">2. Traducción de IA &amp; Automatización</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Diseño de agentes inteligentes y canalizaciones de datos para acelerar los flujos de respuesta comerciales y prospección.</p>
+                </div>
+                <div class="p-6 bg-slate-900/60 rounded-2xl border border-slate-800/50 hover:border-emerald-500/30 transition group">
+                    <div class="w-12 h-12 bg-emerald-500/10 text-emerald-400 rounded-xl flex items-center justify-center font-bold mb-4 group-hover:bg-emerald-500 group-hover:text-slate-950 transition">03</div>
+                    <h4 class="text-xl font-bold text-white mb-2">3. Arquitectura de Datos Comerciales</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Centralización e integración técnica de CRM, fuentes web y sistemas ERP que preparan el terreno hacia la infraestructura TI completa de tu empresa.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section id="test-section" class="max-w-2xl mx-auto px-4 py-20 w-full">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 md:p-8 shadow-xl">
+            <!-- Header del Progreso -->
+            <div class="mb-8">
+                <div class="flex justify-between items-center text-sm mb-2">
+                    <span id="quiz-step-label" class="text-slate-300 font-medium">Paso 1 de 3: Diagnóstico</span>
+                    <span id="quiz-progress-text" class="text-emerald-400 font-bold">33%</span>
+                </div>
+                <div class="w-full h-2 bg-slate-800 rounded-full overflow-hidden">
+                    <div id="quiz-progress-bar" class="w-[33%] h-full bg-emerald-500 transition-all duration-300"></div>
+                </div>
+            </div>
+
+            <!-- Formulario Reactivo -->
+            <form id="egnexus-quiz-form" class="space-y-6">
+                <input type="hidden" name="quiz_respuestas" id="quiz_respuestas">
+
+                <!-- Paso 1 -->
+                <div class="quiz-step space-y-4" data-step="1">
+                    <h3 class="text-xl font-bold text-white">¿Cuál es tu principal canal de captación actual?</h3>
+                    <div class="grid gap-3">
+                        <button type="button" class="quiz-opt w-full text-left p-4 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 transition cursor-pointer text-slate-300" data-val="Organico">A) Orgánico / SEO</button>
+                        <button type="button" class="quiz-opt w-full text-left p-4 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 transition cursor-pointer text-slate-300" data-val="Pauta-Pagada">B) Pauta Digital Pagada</button>
+                    </div>
+                </div>
+
+                <!-- Paso 2 -->
+                <div class="quiz-step space-y-4 hidden" data-step="2">
+                    <h3 class="text-xl font-bold text-white">¿Usas actualmente Inteligencia Artificial en tus flujos de datos?</h3>
+                    <div class="grid gap-3">
+                        <button type="button" class="quiz-opt w-full text-left p-4 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 transition cursor-pointer text-slate-300" data-val="No-Usa">A) No, todavía no</button>
+                        <button type="button" class="quiz-opt w-full text-left p-4 rounded-xl bg-slate-950 hover:bg-slate-800 border border-slate-800 hover:border-emerald-500/50 transition cursor-pointer text-slate-300" data-val="Usa-Basico">B) Sí, herramientas básicas</button>
+                    </div>
+                </div>
+
+                <!-- Paso 3 -->
+                <div class="quiz-step space-y-4 hidden" data-step="3">
+                    <h3 class="text-xl font-bold text-white">¿Cuál es tu presupuesto estimado para infraestructura TI?</h3>
+                    <div class="grid gap-3">
