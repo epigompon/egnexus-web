@@ -8,11 +8,11 @@
     <script src="https://tailwindcss.com"></script>
     <link rel="preconnect" href="https://googleapis.com" />
     <link rel="preconnect" href="https://gstatic.com" crossorigin />
-    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
         body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        /* Color extraído con precisión milimétrica del fondo inferior de tu imagen */
+        /* Color extraído del fondo inferior de tu imagen principal */
         .bg-exact-nexus {
             background-color: #1a3249;
         }
@@ -23,53 +23,60 @@
     <!-- Sección del Arte Principal (Fondo Integrado) -->
     <header class="w-full flex justify-center bg-[#1e344a]">
         <div class="w-full max-w-2xl">
-            <!-- Carga la imagen de fondo integrada -->
             <img src="fondo.jpg" alt="EG Nexus - Próximamente" class="w-full h-auto object-contain block">
         </div>
     </header>
 
-    <!-- Contenido Inferior: Tarjeta de Presentación Corporativa -->
-    <main class="flex-grow flex flex-col items-center justify-start px-4 pt-6 pb-16">
-        <div class="w-full max-w-lg bg-slate-900/40 border border-white/10 rounded-xl p-5 shadow-2xl backdrop-blur-md grid grid-cols-12 gap-5 items-center">
+    <!-- Contenido Inferior: Tarjeta Replicada de Alta Visibilidad -->
+    <main class="flex-grow flex flex-col items-center justify-start px-4 pt-4 pb-16">
+        <div class="w-full max-w-xl bg-slate-900/30 border border-white/5 rounded-2xl p-6 md:p-8 shadow-2xl backdrop-blur-md grid grid-cols-12 gap-6 items-center">
             
-            <!-- Bloque Izquierdo: Logotipo en Miniatura Ultra Compacto -->
-            <div class="col-span-4 flex justify-center items-center border-r border-white/10 pr-2">
-                <img src="logo.jpg" alt="EG Nexus" class="w-20 h-auto object-contain rounded bg-white/5 p-1 shadow-md">
+            <!-- Bloque Izquierdo: Logotipo Centrado -->
+            <div class="col-span-12 sm:col-span-4 flex justify-center items-center sm:border-r sm:border-white/10 sm:pr-4">
+                <img src="logo.jpg" alt="EG Nexus" class="w-28 h-auto object-contain rounded bg-white/5 p-1">
             </div>
 
-            <!-- Bloque Derecho: Datos de la Tarjeta de Presentación -->
-            <div class="col-span-8 space-y-3 pl-2">
+            <!-- Bloque Derecho: Estructura exacta de la Imagen en Blanco -->
+            <div class="col-span-12 sm:col-span-8 space-y-4 pl-0 sm:pl-2">
+                <!-- Títulos Principales -->
                 <div>
-                    <h2 class="text-sm font-bold text-white tracking-tight">Equipo Comercial</h2>
-                    <p class="text-[10px] text-emerald-400 font-semibold tracking-wider uppercase">EG NEXUS</p>
+                    <h2 class="text-lg font-bold text-white tracking-tight">Equipo Comercial | EG Nexus</h2>
+                    <p class="text-xs text-emerald-400 font-medium tracking-wide mt-0.5">EG Nexus Digital Growth Marketing</p>
                 </div>
 
-                <!-- Canales de Contacto Directo Proporcionados -->
-                <div class="space-y-2 text-[11px] text-slate-300">
-                    <!-- WhatsApp -->
-                    <a href="https://wa.me" target="_blank" class="flex items-center gap-2 hover:text-emerald-400 transition group">
-                        <span class="w-4 h-4 rounded bg-emerald-500/10 text-emerald-400 flex items-center justify-center font-bold text-[9px] border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-slate-950 transition flex-shrink-0">W</span>
-                        <span class="font-medium">+52 56 6506 2699</span>
+                <!-- Lista de Contacto con Hipervínculos Interactivos Reales -->
+                <div class="space-y-2.5 text-sm text-white">
+                    <!-- WhatsApp Link -->
+                    <a href="https://wa.me" target="_blank" class="flex items-center gap-2.5 hover:text-emerald-400 transition font-medium group">
+                        <span class="text-emerald-400 font-bold group-hover:scale-110 transition flex-shrink-0">📞</span>
+                        <span><strong>WhatsApp:</strong> +52 56 6506 2699</span>
                     </a>
                     
-                    <!-- Sitio Web -->
-                    <a href="https://egnexus.com.mx" class="flex items-center gap-2 hover:text-blue-400 transition group">
-                        <span class="w-4 h-4 rounded bg-blue-500/10 text-blue-400 flex items-center justify-center font-bold text-[7px] border border-blue-500/20 group-hover:bg-blue-500 group-hover:text-white transition flex-shrink-0">WWW</span>
-                        <span class="font-medium">egnexus.com.mx</span>
+                    <!-- Web Link -->
+                    <a href="https://egnexus.com.mx" class="flex items-center gap-2.5 hover:text-blue-400 transition font-medium group">
+                        <span class="text-blue-400 font-bold group-hover:scale-110 transition flex-shrink-0">🌐</span>
+                        <span><strong>Web:</strong> egnexus.com.mx</span>
                     </a>
                     
-                    <!-- Correo Electrónico -->
-                    <a href="mailto:growth@egnexus.com.mx" class="flex items-center gap-2 hover:text-white transition group">
-                        <span class="w-4 h-4 rounded bg-slate-800 text-slate-400 flex items-center justify-center font-bold text-[9px] border border-slate-700 group-hover:bg-slate-200 group-hover:text-slate-950 transition flex-shrink-0">@</span>
-                        <span class="font-medium break-all">growth@egnexus.com.mx</span>
+                    <!-- Correo Link -->
+                    <a href="mailto:growth@egnexus.com.mx" class="flex items-center gap-2.5 hover:text-teal-400 transition font-medium group">
+                        <span class="text-teal-400 font-bold group-hover:scale-110 transition flex-shrink-0">✉️</span>
+                        <span class="break-all"><strong>Correo:</strong> growth@egnexus.com.mx</span>
                     </a>
+                </div>
+
+                <!-- Eslogan en Itálica (Estilo de la Tarjeta) -->
+                <div class="pt-2 border-t border-white/10">
+                    <p class="text-xs italic text-slate-300 font-normal leading-relaxed">
+                        Estrategias digitales orientadas al crecimiento de tu negocio.
+                    </p>
                 </div>
             </div>
 
         </div>
     </main>
 
-    <!-- Pie de Página Sutil -->
+    <!-- Pie de Página Fijo -->
     <footer class="border-t border-white/5 bg-slate-950/20 py-4 text-center text-[10px] text-slate-500">
         <div class="max-w-xl mx-auto px-4 flex justify-between items-center">
             <p>© 2026 EG Nexus. Todos los derechos reservados.</p>
