@@ -17,10 +17,10 @@
         .bg-light-tech {
             background-color: #f8fafc;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.04) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.04) 0px, transparent 50%),
-                linear-gradient(rgba(226, 232, 240, 0.6) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(226, 232, 240, 0.6) 1px, transparent 1px);
+                radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.02) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(30, 58, 138, 0.03) 0px, transparent 50%),
+                linear-gradient(rgba(226, 232, 240, 0.5) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(226, 232, 240, 0.5) 1px, transparent 1px);
             background-size: 100% 100%, 100% 100%, 32px 32px, 32px 32px;
         }
     </style>
@@ -29,79 +29,79 @@
 
     <!-- Barra de Navegación Superior -->
     <nav class="border-b border-slate-200 bg-white/70 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-5xl mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <!-- Logotipo Real en la barra superior -->
-                <img src="logo.jpg" alt="EG Nexus Logo" class="h-8 w-auto object-contain rounded">
-                <span class="font-bold tracking-tight text-lg text-slate-900">EG NEXUS</span>
+                <!-- Logotipo Superior sutil y pequeño -->
+                <img src="logo.jpg" alt="EG Nexus Logo" class="h-6 w-auto object-contain rounded">
+                <span class="font-bold tracking-tight text-base text-slate-900">EG NEXUS</span>
             </div>
-            <div class="flex items-center gap-2 text-xs font-semibold tracking-wider text-slate-500 bg-slate-100 px-3 py-1.5 rounded-full border border-slate-200">
-                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span> SITIO EN DESARROLLO
+            <div class="flex items-center gap-2 text-[10px] font-semibold tracking-wider text-slate-500 bg-slate-100 px-2.5 py-1 rounded-full border border-slate-200">
+                <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span> SITIO EN DESARROLLO
             </div>
         </div>
     </nav>
 
     <!-- Contenido Central: Mensaje de Próximamente -->
-    <main class="flex-grow flex items-center justify-center px-4 py-16 relative z-10">
-        <div class="max-w-4xl w-full bg-white border border-slate-200 rounded-3xl p-8 md:p-12 shadow-xl shadow-slate-100 relative overflow-hidden grid md:grid-cols-12 gap-8 items-center">
+    <main class="flex-grow flex items-center justify-center px-4 py-12 relative z-10">
+        <div class="max-w-4xl w-full bg-white border border-slate-200 rounded-3xl p-6 md:p-10 shadow-xl shadow-slate-100 relative overflow-hidden grid md:grid-cols-12 gap-8 items-center">
             
             <!-- Columna Izquierda: Aviso Institucional -->
-            <div class="space-y-6 md:col-span-6">
-                <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-emerald-700 bg-emerald-50 px-3 py-1.5 rounded-full border border-emerald-200/60 uppercase">
+            <div class="space-y-4 md:col-span-6">
+                <div class="inline-flex items-center gap-2 text-[10px] font-bold tracking-widest text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200/60 uppercase">
                     Próximamente
                 </div>
-                <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
                     El nuevo espacio digital de <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-blue-700">EG Nexus</span> está en proceso.
                 </h1>
-                <p class="text-slate-500 text-base leading-relaxed">
+                <p class="text-slate-500 text-sm leading-relaxed">
                     Estamos construyendo una plataforma corporativa renovada. Nuestro equipo técnico se encuentra trabajando en la infraestructura para ofrecerte una experiencia óptima y profesional muy pronto.
                 </p>
-                <div class="w-16 h-1 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full"></div>
+                <div class="w-12 h-0.5 bg-gradient-to-r from-emerald-500 to-blue-600 rounded-full"></div>
             </div>
 
             <!-- Columna Derecha: Tarjeta Comercial Ejecutiva -->
-            <div class="md:col-span-6 w-full">
-                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 md:p-8 shadow-sm relative group transition duration-300">
+            <div class="md:col-span-6 w-full max-w-sm mx-auto md:mr-0">
+                <div class="bg-slate-50 border border-slate-200 rounded-2xl p-5 md:p-6 shadow-sm relative group transition duration-300">
                     
-                    <!-- Contenedor del Logotipo Principal -->
-                    <div class="flex justify-center mb-6 bg-white p-4 rounded-xl border border-slate-200/80 shadow-inner max-w-xs mx-auto">
-                        <img src="logo.jpg" alt="EG Nexus Logotipo" class="h-20 w-auto object-contain">
+                    <!-- Contenedor del Logotipo Principal (Medida reducida y estilizada) -->
+                    <div class="flex justify-center mb-5 bg-white p-3 rounded-xl border border-slate-200/80 shadow-inner max-w-[160px] mx-auto">
+                        <img src="logo.jpg" alt="EG Nexus Logotipo" class="h-12 w-auto object-contain">
                     </div>
 
                     <!-- Datos Corporativos -->
-                    <div class="mb-6 text-center md:text-left">
-                        <h2 class="text-lg font-bold text-slate-900 tracking-tight">Equipo Comercial | EG Nexus</h2>
-                        <p class="text-xs text-slate-500 font-medium mt-0.5">EG Nexus</p>
+                    <div class="mb-4 text-center md:text-left">
+                        <h2 class="text-sm font-bold text-slate-900 tracking-tight">Equipo Comercial | EG Nexus</h2>
+                        <p class="text-[11px] text-slate-400 font-medium">EG Nexus</p>
                     </div>
 
-                    <!-- Canales de Contacto Directo Corregidos -->
-                    <div class="space-y-4 text-sm">
+                    <!-- Canales de Contacto Directo -->
+                    <div class="space-y-2.5 text-xs">
                         <!-- WhatsApp -->
                         <a href="https://wa.me" target="_blank" class="flex items-center gap-3 text-slate-600 hover:text-emerald-600 transition group/item">
-                            <div class="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200/50 group-hover/item:bg-emerald-500 group-hover/item:text-white transition flex-shrink-0">
-                                <span class="font-bold text-base leading-none">W</span>
+                            <div class="w-6 h-6 rounded-md bg-emerald-50 text-emerald-600 flex items-center justify-center border border-emerald-200/50 group-hover/item:bg-emerald-500 group-hover/item:text-white transition flex-shrink-0 font-bold text-[10px]">
+                                W
                             </div>
                             <span class="font-semibold text-slate-700">+52 56 6506 2699</span>
                         </a>
                         <!-- Sitio Web -->
                         <a href="https://egnexus.com.mx" class="flex items-center gap-3 text-slate-600 hover:text-blue-600 transition group/item">
-                            <div class="w-8 h-8 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-200/50 group-hover/item:bg-blue-600 group-hover/item:text-white transition flex-shrink-0">
-                                <span class="font-bold text-base leading-none">WWW</span>
+                            <div class="w-6 h-6 rounded-md bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-200/50 group-hover/item:bg-blue-600 group-hover/item:text-white transition flex-shrink-0 font-bold text-[9px]">
+                                WWW
                             </div>
                             <span class="font-semibold text-slate-700">egnexus.com.mx</span>
                         </a>
                         <!-- Correo Electrónico -->
                         <a href="mailto:growth@egnexus.com.mx" class="flex items-center gap-3 text-slate-600 hover:text-blue-600 transition group/item">
-                            <div class="w-8 h-8 rounded-lg bg-slate-200 text-slate-600 flex items-center justify-center border border-slate-300 group-hover/item:bg-slate-700 group-hover/item:text-white transition flex-shrink-0">
-                                <span class="font-bold text-base leading-none">@</span>
+                            <div class="w-6 h-6 rounded-md bg-slate-200 text-slate-600 flex items-center justify-center border border-slate-300 group-hover/item:bg-slate-700 group-hover/item:text-white transition flex-shrink-0 font-bold text-[10px]">
+                                @
                             </div>
                             <span class="font-semibold text-slate-700 break-all">growth@egnexus.com.mx</span>
                         </a>
                     </div>
 
                     <!-- Eslogan Inferior -->
-                    <div class="mt-6 pt-4 border-t border-slate-200">
-                        <p class="text-xs italic text-slate-400 font-medium text-center md:text-left leading-relaxed">
+                    <div class="mt-5 pt-3 border-t border-slate-200">
+                        <p class="text-[11px] italic text-slate-400 font-medium text-center md:text-left">
                             "EG Nexus"
                         </p>
                     </div>
@@ -112,8 +112,8 @@
     </main>
 
     <!-- Pie de Página -->
-    <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-400 relative z-10">
-        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+    <footer class="border-t border-slate-200 bg-white py-4 text-center text-[11px] text-slate-400 relative z-10">
+        <div class="max-w-5xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-2">
             <p>© 2026 EG Nexus. Todos los derechos reservados.</p>
             <p class="text-slate-400 font-medium">EG Nexus.</p>
         </div>
@@ -121,4 +121,3 @@
 
 </body>
 </html>
-
