@@ -1,86 +1,279 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EG Nexus</title>
-    <!-- CDN Estable de Tailwind CSS -->
-    <script src="https://tailwindcss.com"></script>
     <link rel="preconnect" href="https://googleapis.com" />
     <link rel="preconnect" href="https://gstatic.com" crossorigin />
     <link href="https://googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
     
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        /* Color extraído del fondo inferior de tu imagen principal */
-        .bg-exact-nexus {
-            background-color: #1a3249;
+        /* Estilos base obligatorios sin depender de librerías externas */
+        body { 
+            font-family: 'Plus Jakarta Sans', sans-serif; 
+            margin: 0;
+            padding: 0;
+            background-color: #1a3249; /* Tono azul exacto extraído de tu imagen */
+            color: #f1f5f9;
+            min-h-screen: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            background-color: #1e344a;
+        }
+
+        .header-container {
+            width: 100%;
+            max-width: 640px;
+        }
+
+        .header-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        main {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 24px 16px 64px 16px;
+        }
+
+        /* Estructura de la Tarjeta Corporativa */
+        .tarjeta-comercial {
+            width: 100%;
+            max-width: 500px;
+            background-color: rgba(15, 23, 42, 0.45);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 28px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            box-sizing: border-box;
+        }
+
+        .grid-tarjeta {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 24px;
+        }
+
+        /* Columna Izquierda: Logo */
+        .logo-box {
+            flex: 0 0 110px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid rgba(255, 255, 255, 0.12);
+            padding-right: 20px;
+        }
+
+        .logo-box img {
+            width: 100%;
+            max-width: 100px;
+            height: auto;
+            display: block;
+            border-radius: 6px;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 4px;
+        }
+
+        /* Columna Derecha: Textos de la tarjeta */
+        .info-box {
+            flex: 1;
+        }
+
+        .titulo-empresa {
+            font-size: 17px;
+            font-weight: 700;
+            color: #ffffff;
+            margin: 0 0 4px 0;
+            tracking-tight: -0.025em;
+        }
+
+        .subtitulo-empresa {
+            font-size: 11px;
+            font-weight: 600;
+            color: #34d399; /* Verde esmeralda tecnológico */
+            margin: 0 0 16px 0;
+            letter-spacing: 0.05em;
+        }
+
+        /* Enlaces de contacto */
+        .lista-contacto {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .enlace-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .enlace-item:hover {
+            color: #34d399;
+        }
+
+        .enlace-item strong {
+            color: #ffffff;
+        }
+
+        .icono-emoji {
+            font-size: 14px;
+            display: inline-block;
+        }
+
+        /* Eslogan Inferior */
+        .eslogan-box {
+            margin-top: 16px;
+            padding-top: 12px;
+            border-t: 1px solid rgba(255, 255, 255, 0.12);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .eslogan-texto {
+            font-size: 12px;
+            font-style: italic;
+            color: #cbd5e1;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background-color: rgba(2, 6, 23, 0.3);
+            padding: 16px 0;
+            font-size: 10px;
+            color: #64748b;
+        }
+
+        .footer-container {
+            max-width: 640px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
+        }
+
+        .footer-container p {
+            margin: 0;
+        }
+
+        .footer-brand {
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            color: #94a3b8;
+        }
+
+        /* Adaptación perfecta para pantallas de celulares */
+        @media (max-width: 520px) {
+            .grid-tarjeta {
+                flex-direction: column;
+                text-align: center;
+                gap: 16px;
+            }
+            .logo-box {
+                border-right: none;
+                padding-right: 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+                padding-bottom: 16px;
+                flex: none;
+                width: 100%;
+            }
+            .logo-box img {
+                max-width: 90px;
+            }
+            .enlace-item {
+                justify-content: center;
+                font-size: 12px;
+            }
+            .eslogan-texto {
+                text-align: center;
+            }
         }
     </style>
 </head>
-<body class="bg-exact-nexus text-slate-200 min-h-screen flex flex-col justify-between selection:bg-emerald-500 selection:text-white">
+<body>
 
     <!-- Sección del Arte Principal (Fondo Integrado) -->
-    <header class="w-full flex justify-center bg-[#1e344a]">
-        <div class="w-full max-w-2xl">
-            <img src="fondo.jpg" alt="EG Nexus - Próximamente" class="w-full h-auto object-contain block">
+    <header>
+        <div class="header-container">
+            <img src="fondo.jpg" alt="EG Nexus - Próximamente">
         </div>
     </header>
 
-    <!-- Contenido Inferior: Tarjeta Replicada de Alta Visibilidad -->
-    <main class="flex-grow flex flex-col items-center justify-start px-4 pt-4 pb-16">
-        <div class="w-full max-w-xl bg-slate-900/30 border border-white/5 rounded-2xl p-6 md:p-8 shadow-2xl backdrop-blur-md grid grid-cols-12 gap-6 items-center">
-            
-            <!-- Bloque Izquierdo: Logotipo Centrado -->
-            <div class="col-span-12 sm:col-span-4 flex justify-center items-center sm:border-r sm:border-white/10 sm:pr-4">
-                <img src="logo.jpg" alt="EG Nexus" class="w-28 h-auto object-contain rounded bg-white/5 p-1">
+    <!-- Contenido Inferior: Tarjeta de Presentación Replicada -->
+    <main>
+        <div class="tarjeta-comercial">
+            <div class="grid-tarjeta">
+                
+                <!-- Bloque Izquierdo: Logotipo Centrado -->
+                <div class="logo-box">
+                    <img src="logo.jpg" alt="EG Nexus">
+                </div>
+
+                <!-- Bloque Derecho: Estructura de la Tarjeta en Blanco -->
+                <div class="info-box">
+                    <h2 class="titulo-empresa">Equipo Comercial | EG Nexus</h2>
+                    <p class="subtitulo-empresa">EG Nexus Digital Growth Marketing</p>
+
+                    <!-- Lista de Contacto con Hipervínculos Reales -->
+                    <div class="lista-contacto">
+                        <!-- WhatsApp Link -->
+                        <a href="https://wa.me" target="_blank" class="enlace-item">
+                            <span class="icono-emoji">📞</span>
+                            <span><strong>WhatsApp:</strong> +52 56 6506 2699</span>
+                        </a>
+                        
+                        <!-- Web Link -->
+                        <a href="https://egnexus.com.mx" class="enlace-item">
+                            <span class="icono-emoji">🌐</span>
+                            <span><strong>Web:</strong> egnexus.com.mx</span>
+                        </a>
+                        
+                        <!-- Correo Link -->
+                        <a href="mailto:growth@egnexus.com.mx" class="enlace-item">
+                            <span class="icono-emoji">✉️</span>
+                            <span><strong>Correo:</strong> growth@egnexus.com.mx</span>
+                        </a>
+                    </div>
+
+                    <!-- Eslogan en Itálica -->
+                    <div class="eslogan-box">
+                        <p class="eslogan-texto">
+                            Estrategias digitales orientadas al crecimiento de tu negocio.
+                        </p>
+                    </div>
+                </div>
+
             </div>
-
-            <!-- Bloque Derecho: Estructura exacta de la Imagen en Blanco -->
-            <div class="col-span-12 sm:col-span-8 space-y-4 pl-0 sm:pl-2">
-                <!-- Títulos Principales -->
-                <div>
-                    <h2 class="text-lg font-bold text-white tracking-tight">Equipo Comercial | EG Nexus</h2>
-                    <p class="text-xs text-emerald-400 font-medium tracking-wide mt-0.5">EG Nexus Digital Growth Marketing</p>
-                </div>
-
-                <!-- Lista de Contacto con Hipervínculos Interactivos Reales -->
-                <div class="space-y-2.5 text-sm text-white">
-                    <!-- WhatsApp Link -->
-                    <a href="https://wa.me" target="_blank" class="flex items-center gap-2.5 hover:text-emerald-400 transition font-medium group">
-                        <span class="text-emerald-400 font-bold group-hover:scale-110 transition flex-shrink-0">📞</span>
-                        <span><strong>WhatsApp:</strong> +52 56 6506 2699</span>
-                    </a>
-                    
-                    <!-- Web Link -->
-                    <a href="https://egnexus.com.mx" class="flex items-center gap-2.5 hover:text-blue-400 transition font-medium group">
-                        <span class="text-blue-400 font-bold group-hover:scale-110 transition flex-shrink-0">🌐</span>
-                        <span><strong>Web:</strong> egnexus.com.mx</span>
-                    </a>
-                    
-                    <!-- Correo Link -->
-                    <a href="mailto:growth@egnexus.com.mx" class="flex items-center gap-2.5 hover:text-teal-400 transition font-medium group">
-                        <span class="text-teal-400 font-bold group-hover:scale-110 transition flex-shrink-0">✉️</span>
-                        <span class="break-all"><strong>Correo:</strong> growth@egnexus.com.mx</span>
-                    </a>
-                </div>
-
-                <!-- Eslogan en Itálica (Estilo de la Tarjeta) -->
-                <div class="pt-2 border-t border-white/10">
-                    <p class="text-xs italic text-slate-300 font-normal leading-relaxed">
-                        Estrategias digitales orientadas al crecimiento de tu negocio.
-                    </p>
-                </div>
-            </div>
-
         </div>
     </main>
 
     <!-- Pie de Página Fijo -->
-    <footer class="border-t border-white/5 bg-slate-950/20 py-4 text-center text-[10px] text-slate-500">
-        <div class="max-w-xl mx-auto px-4 flex justify-between items-center">
+    <footer>
+        <div class="footer-container">
             <p>© 2026 EG Nexus. Todos los derechos reservados.</p>
-            <p class="font-semibold tracking-wider text-slate-400">EG NEXUS</p>
+            <p class="footer-brand">EG NEXUS</p>
         </div>
     </footer>
 
