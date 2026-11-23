@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aviso de privacidad · EG NEXUS</title>
+  <meta name="description" content="Cómo EG NEXUS recaba, usa y protege tus datos personales conforme a la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP) en México.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://egnexus.com.mx/aviso-privacidad.html">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="Aviso de privacidad · EG NEXUS">
+  <meta property="og:description" content="Qué datos recabamos, para qué los usamos y cómo ejercer tus derechos ARCO conforme a la ley mexicana de protección de datos personales.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://egnexus.com.mx/aviso-privacidad.html">
+  <meta property="og:image" content="https://egnexus.com.mx/logo.jpg">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Aviso de privacidad · EG NEXUS">
+  <meta name="twitter:description" content="Reglas claras sobre el uso y protección de tus datos personales en EG NEXUS.">
+  <meta name="twitter:image" content="https://egnexus.com.mx/logo.jpg">
+
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap">
+
+  <style>
+    :root {
+      --background: oklch(97.5% .004 210);
+      --foreground: oklch(26% .035 234);
+      --primary: oklch(45% .083 236);
+      --primary-foreground: oklch(99% .002 210);
+      --secondary: oklch(80% .088 162);
+      --secondary-foreground: oklch(25% .045 166);
+      --muted: oklch(93% .01 210);
+      --muted-foreground: oklch(46% .025 225);
+      --accent: oklch(92% .029 225);
+      --accent-foreground: oklch(45% .083 236);
+      --border: oklch(84% .015 210);
+      --ink-surface: oklch(24% .041 228);
+      --ink-foreground: oklch(98% .003 210);
+      --brand-green: oklch(46% .083 164);
+      --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-display: "Manrope", sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: 0 solid var(--border);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    ::selection {
+      background: var(--secondary);
+      color: var(--foreground);
+    }
+
+    /* Scroll Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--brand-green), var(--secondary));
+      z-index: 100;
+      transition: width 0.08s linear;
+    }
+
+    /* Layout & Containers */
+    .container-wide {
+      width: calc(100% - 40px);
+      max-width: 1320px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: 641px) {
+      .container-wide {
+        width: calc(100% - 48px);
+      }
+    }
+
+    @media (min-width: 901px) {
+      .container-wide {
+        width: min(100% - 96px, 1320px);
+      }
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+      background-color: color-mix(in oklab, var(--background) 88%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .header-inner {
+      display: flex;
+      height: 80px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    @media (min-width: 641px) {
+      .brand {
+        font-size: 22px;
+      }
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 8px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .brand-accent {
+      color: var(--brand-green);
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 26px;
+    }
+
+    @media (min-width: 960px) {
+      .desktop-nav {
+        display: flex;
+      }
+    }
+
+    .nav-link {
+      color: var(--muted-foreground);
+      font-size: 13.5px;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      white-space: nowrap;
+      font-size: 13px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      background-color: var(--background);
+      height: 38px;
+      padding-inline: 14px;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--accent);
+      color: var(--accent-foreground);
+      border-color: var(--primary);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, color-mix(in oklab, var(--primary) 82%, var(--brand-green)) 100%);
+      color: var(--primary-foreground);
+      height: 38px;
+      padding-inline: 16px;
+      display: none;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      opacity: 0.94;
+    }
+
+    @media (min-width: 640px) {
+      .btn-primary {
+        display: inline-flex;
+      }
+    }
+
+    /* Privacy Main Section */
+    .privacy-section {
+      background: linear-gradient(180deg, var(--muted) 0%, var(--background) 280px);
+      padding-block: 56px 88px;
+    }
+
+    @media (min-width: 768px) {
+      .privacy-section {
+        padding-block: 80px 104px;
+      }
+    }
+
+    .privacy-layout {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    /* Sticky SOLO en pantallas medianas y grandes para evitar traslape en móviles */
+    .sticky-sidebar {
+      position: static;
+    }
+
+    @media (min-width: 901px) {
+      .privacy-layout {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 64px;
+      }
+
+      .sticky-sidebar {
+        position: sticky;
+        top: 108px;
+      }
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      background: var(--brand-green);
+      border-radius: 50%;
+      width: 7px;
+      height: 7px;
+      box-shadow: 0 0 0 4px color-mix(in oklab, var(--secondary) 55%, transparent);
+    }
+
+    .section-heading {
+      font-size: 32px;
+      font-weight: 800;
+      line-height: 1.16;
+      letter-spacing: -0.02em;
+    }
+
+    @media (min-width: 641px) {
+      .section-heading {
+        font-size: 42px;
+      }
+    }
+
+    .sidebar-copy {
+      margin-top: 18px;
+      max-width: 420px;
+      font-size: 14.5px;
+      line-height: 1.75;
+      color: var(--muted-foreground);
+    }
+
+    .legal-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      background: var(--background);
+      border-radius: 10px;
+      font-size: 12px;
+      color: var(--muted-foreground);
+      margin-top: 22px;
+      max-width: 100%;
+    }
+
+    .legal-badge svg {
+      color: var(--brand-green);
+      flex-shrink: 0;
+    }
+
+    .legal-badge strong {
+      color: var(--foreground);
+    }
+
+    .contact-channels {
+      display: grid;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .channel-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--background);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--foreground);
+      transition: border-color 0.2s, transform 0.2s, color 0.2s;
+      overflow-wrap: anywhere;
+    }
+
+    .channel-link:hover {
+      border-color: var(--brand-green);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .channel-link svg {
+      color: var(--brand-green);
+      flex-shrink: 0;
+    }
+
+    /* Privacy Cards */
+    .privacy-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .privacy-card {
+      border: 1px solid var(--border);
+      background: var(--background);
+      border-radius: 12px;
+      padding: 22px 24px;
+      box-shadow: 0 4px 12px -6px rgba(15, 23, 42, 0.06);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .privacy-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .privacy-card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .privacy-num {
+      background: var(--accent);
+      color: var(--primary);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 9999px;
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+    }
+
+    .privacy-card h2 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--foreground);
+      line-height: 1.3;
+    }
+
+    .privacy-card p {
+      color: var(--muted-foreground);
+      font-size: 13.5px;
+      line-height: 1.75;
+    }
+
+    .privacy-card p + p {
+      margin-top: 10px;
+    }
+
+    .privacy-card ul {
+      margin-top: 10px;
+      display: grid;
+      gap: 6px;
+    }
+
+    .privacy-card li {
+      color: var(--muted-foreground);
+      font-size: 13.5px;
+      line-height: 1.65;
+      padding-left: 16px;
+      position: relative;
+    }
+
+    .privacy-card li::before {
+      content: "•";
+      color: var(--brand-green);
+      font-weight: 800;
+      position: absolute;
+      left: 0;
+    }
+
+    .privacy-card strong {
+      color: var(--foreground);
+      font-weight: 600;
+    }
+
+    .privacy-card a {
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+      font-weight: 500;
+    }
+
+    .privacy-card a:hover {
+      color: var(--brand-green);
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding-block: 36px;
+      background: var(--background);
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      font-size: 12.5px;
+      color: var(--muted-foreground);
+    }
+
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-brand-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-link {
+      color: var(--muted-foreground);
+      transition: color 0.2s;
+    }
+
+    .footer-link:hover {
+      color: var(--primary);
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #10b981;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.5);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #059669;
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de progreso -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container-wide header-inner">
+      <a href="index.html" class="brand" aria-label="EG NEXUS, volver al inicio">
+        <img src="logo.jpg" alt="Logotipo oficial de EG NEXUS" class="brand-logo" width="40" height="40">
+        <span>EG <span class="brand-accent">NEXUS</span></span>
+      </a>
+
+      <nav aria-label="Navegación rápida" class="desktop-nav">
+        <a href="index.html#servicios" class="nav-link">Servicios</a>
+        <a href="index.html#planes" class="nav-link">Planes</a>
+        <a href="index.html#equipo" class="nav-link">Equipo</a>
+        <a href="index.html#nosotros" class="nav-link">Nuestro enfoque</a>
+        <a href="index.html#preguntas" class="nav-link">Preguntas</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="index.html" class="btn btn-outline">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m12 19-7-7 7-7"/><path d="M19 12H5"/></svg>
+          Volver al inicio
+        </a>
+        <a href="index.html#contacto" class="btn btn-primary">
+          Ir al formulario
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="privacy-section">
+      <div class="container-wide privacy-layout">
+
+        <!-- Columna izquierda (fija solo en escritorio, fluida en móvil) -->
+        <aside class="sticky-sidebar">
+          <div class="eyebrow">Aviso de privacidad integral</div>
+          <h1 class="section-heading">Tus datos,<br>con reglas claras.</h1>
+          <p class="sidebar-copy">
+            En <strong>EG NEXUS</strong> tratamos tu información conforme a la <strong>Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP)</strong> en México. Sin letra pequeña: qué recabamos, para qué lo usamos y cómo puedes ejercer tus derechos.
+          </p>
+
+          <div class="legal-badge">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+            <span><strong>Última actualización:</strong> Noviembre de 2026 · Ciudad de México</span>
+          </div>
+
+          <div class="contact-channels">
+            <a href="mailto:growth@egnexus.com.mx?subject=Solicitud%20de%20Derechos%20ARCO%20-%20EG%20NEXUS" class="channel-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"/></svg>
+              <span>growth@egnexus.com.mx</span>
+            </a>
+            <a href="https://wa.me/525665062699?text=Hola%2C%20equipo%20de%20EG%20NEXUS.%20Tengo%20una%20consulta%20sobre%20el%20aviso%20de%20privacidad." target="_blank" rel="noopener noreferrer" class="channel-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span>WhatsApp · +52 56 6506 2699</span>
+            </a>
+          </div>
+        </aside>
+
+        <!-- Columna derecha: Cláusulas -->
+        <div class="privacy-list">
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-num">01</span>
+              <h2>Identidad y domicilio del responsable</h2>
+            </div>
+            <p><strong>EG NEXUS Digital Growth Marketing</strong> ("EG NEXUS"), representado por <strong>Epifanio Gómez Ponciano</strong>, con sitio web oficial en <strong>egnexus.com.mx</strong> y operaciones en la <strong>Alcaldía Miguel Hidalgo, Ciudad de México, México</strong>, es responsable del tratamiento, uso y protección de los datos personales que nos proporciones. Cualquier duda o solicitud relacionada con tu privacidad es atendida directamente en <a href="mailto:growth@egnexus.com.mx">growth@egnexus.com.mx</a>.</p>
+          </article>
+
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-num">02</span>
+              <h2>Datos personales que recabamos</h2>
+            </div>
+            <p>Recabamos únicamente los datos de identificación y contacto comercial que nos compartes voluntariamente al llenar nuestro formulario, escribirnos por WhatsApp, correo electrónico o redes sociales:</p>
+            <ul>
+              <li>Nombre completo o nombre comercial de tu marca.</li>
+              <li>Correo electrónico y número telefónico (WhatsApp).</li>
+              <li>Información general sobre tu proyecto, redes sociales, sitio web, objetivos y modalidad de interés (Tarifa Fija o Growth Partner).</li>
+            </ul>
+            <p><strong>EG NEXUS no solicita ni recaba datos personales sensibles</strong> (como origen racial, estado de salud, creencias religiosas o afiliación política).</p>
+          </article>
+
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-num">03</span>
+              <h2>Finalidades del tratamiento</h2>
+            </div>
+            <p><strong>Finalidades primarias (necesarias para atenderte):</strong></p>
+            <ul>
+              <li>Responder tus dudas y solicitudes de cotización.</li>
+              <li>Evaluar la viabilidad de tu proyecto para planes de Tarifa Fija o modalidad Growth Partner.</li>
+              <li>Elaborar propuestas comerciales, prestar servicios de diseño web, gestión de redes sociales o publicidad digital, y emitir reportes de desempeño.</li>
+            </ul>
+            <p><strong>Finalidades secundarias (opcionales):</strong> Enviarte recomendaciones prácticas o novedades sobre nuestros servicios. Si no deseas recibir este tipo de comunicaciones, puedes indicarlo en cualquier momento escribiendo a <a href="mailto:growth@egnexus.com.mx">growth@egnexus.com.mx</a>.</p>
+          </article>
+
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-num">04</span>
+              <h2>Cómo se transmiten y resguardan tus datos</h2>
+            </div>
+            <p>Nuestro sitio web funciona bajo un principio de <strong>privacidad desde el diseño</strong>: no almacena tus datos en una base de datos oculta en el servidor. Al llenar el formulario de contacto, el mensaje se genera en tu propio dispositivo y tú decides enviarlo directamente desde tu aplicación de WhatsApp o tu cliente de correo electrónico.</p>
+            <p>La información que recibimos en nuestros canales oficiales se resguarda bajo medidas de seguridad administrativas y digitales. <strong>No vendemos, alquilamos ni cedemos tus datos personales a terceros.</strong></p>
+          </article>
+
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-num">05</span>
+              <h2>Transferencias de datos</h2>
+            </div>
+            <p>EG NEXUS no realiza transferencias de tus datos personales a terceros, salvo aquellas estrictamente necesarias para cumplir con obligaciones legales ante autoridades competentes o cuando tú autorices expresamente la configuración de herramientas digitales a tu nombre (como plataformas de dominio, hosting, Meta Ads o Google Ads).</p>
+          </article>
+
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-num">06</span>
+              <h2>Cookies y medición de desempeño</h2>
+            </div>
+            <p>Este sitio prioriza una navegación rápida y transparente. En caso de utilizar herramientas de analítica web (como Google Analytics o Search Console) para entender cuántas personas visitan nuestra página y mejorar la experiencia, los datos se procesan de forma estadística y agregada, sin identificarte de manera individual. Puedes deshabilitar las cookies en cualquier momento desde la configuración de tu navegador.</p>
+          </article>
+
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-num">07</span>
+              <h2>Derechos ARCO y revocación del consentimiento</h2>
+            </div>
+            <p>Conforme a la LFPDPPP, tienes derecho a conocer qué datos tenemos de ti (<strong>Acceso</strong>), pedir que los corrijamos (<strong>Rectificación</strong>), solicitar su eliminación (<strong>Cancelación</strong>) u oponerte a su uso para fines específicos (<strong>Oposición</strong>), así como revocar tu consentimiento.</p>
+            <p>Para ejercer cualquiera de estos derechos, envía un correo a <a href="mailto:growth@egnexus.com.mx?subject=Solicitud%20de%20Derechos%20ARCO%20-%20EG%20NEXUS">growth@egnexus.com.mx</a> indicando tu nombre completo, el medio para responderte y una descripción clara de tu solicitud. Te daremos respuesta en un plazo máximo de <strong>20 días hábiles</strong>.</p>
+          </article>
+
+          <article class="privacy-card">
+            <div class="privacy-card-header">
+              <span class="privacy-num">08</span>
+              <h2>Cambios a este aviso de privacidad</h2>
+            </div>
+            <p>Este aviso de privacidad está vigente a partir de <strong>noviembre de 2026</strong>. Cualquier actualización derivada de cambios legales o de la evolución de nuestros servicios será publicada directamente en <strong>egnexus.com.mx/aviso-privacidad.html</strong>.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container-wide footer-inner">
+      <div class="footer-brand-row">
+        <a href="index.html" class="brand" style="font-size: 16px;">
+          <img src="logo.jpg" alt="Logotipo de EG NEXUS" class="brand-logo" style="width: 28px; height: 28px;">
+          <span>EG <span class="brand-accent">NEXUS</span></span>
+        </a>
+        <span>· © 2026 EG NEXUS. Todos los derechos reservados.</span>
+      </div>
+
+      <div class="footer-links">
+        <a class="footer-link" href="index.html">Inicio</a>
+        <a class="footer-link" href="index.html#planes">Planes</a>
+        <a class="footer-link" href="index.html#contacto">Contacto</a>
+        <a class="footer-link" href="https://www.instagram.com/eg_nexus/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a class="footer-link" href="https://www.facebook.com/profile.php?id=61595029054017" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a class="footer-link" href="mailto:growth@egnexus.com.mx">growth@egnexus.com.mx</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/525665062699?text=Hola%2C%20equipo%20de%20EG%20NEXUS.%20Tengo%20una%20consulta%20sobre%20el%20aviso%20de%20privacidad." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contactar a EG NEXUS por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <script>
+    (function () {
+      var progressBar = document.getElementById('scroll-progress');
+      window.addEventListener('scroll', function () {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        if (progressBar && docHeight > 0) {
+          progressBar.style.width = ((scrollTop / docHeight) * 100) + '%';
+        }
+      }, { passive: true });
+    })();
+  </script>
+</body>
+</html>
