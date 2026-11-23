@@ -1,0 +1,2805 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>EG NEXUS · Diseño Web, Redes Sociales y Growth Marketing con Datos</title>
+  <meta name="description" content="Impulsamos tu negocio en redes sociales y web con estrategia y datos claros. Planes fijos y modelo Growth Partner por resultados para marcas en crecimiento en México.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://egnexus.com.mx/">
+
+  <!-- Open Graph / Social Media -->
+  <meta property="og:title" content="EG NEXUS · Diseño Web, Redes Sociales y Growth Marketing con Datos">
+  <meta property="og:description" content="Impulsamos tu negocio en redes sociales y web con estrategia y datos claros. Planes fijos y modelo Growth Partner por resultados para marcas en crecimiento en México.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://egnexus.com.mx/">
+  <meta property="og:image" content="https://egnexus.com.mx/logo.jpg">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="EG NEXUS · Diseño Web, Redes Sociales y Growth Marketing con Datos">
+  <meta name="twitter:description" content="Planes fijos y modelo Growth Partner por resultados para emprendedores, creadores y negocios en crecimiento en México.">
+  <meta name="twitter:image" content="https://egnexus.com.mx/logo.jpg">
+
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap">
+
+  <style>
+    :root {
+      --background: oklch(97.5% .004 210);
+      --foreground: oklch(26% .035 234);
+      --primary: oklch(45% .083 236);
+      --primary-foreground: oklch(99% .002 210);
+      --secondary: oklch(80% .088 162);
+      --secondary-foreground: oklch(25% .045 166);
+      --muted: oklch(93% .01 210);
+      --muted-foreground: oklch(46% .025 225);
+      --accent: oklch(92% .029 225);
+      --accent-foreground: oklch(45% .083 236);
+      --border: oklch(84% .015 210);
+      --destructive: oklch(58% .2 25);
+      --ink-surface: oklch(24% .041 228);
+      --ink-foreground: oklch(98% .003 210);
+      --brand-green: oklch(46% .083 164);
+      --font-sans: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-display: "Manrope", sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      border: 0 solid var(--border);
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      background-color: var(--background);
+      color: var(--foreground);
+      font-family: var(--font-sans);
+      line-height: 1.5;
+      overflow-x: hidden;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-display);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul, ol {
+      list-style: none;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+      color: inherit;
+      background-color: transparent;
+    }
+
+    ::selection {
+      background: var(--secondary);
+      color: var(--foreground);
+    }
+
+    /* Scroll Progress Bar */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 3px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--primary), var(--brand-green), var(--secondary));
+      z-index: 100;
+      transition: width 0.08s linear;
+    }
+
+    /* Scroll Reveal Animations */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 { transition-delay: 0.08s; }
+    .reveal-delay-2 { transition-delay: 0.16s; }
+    .reveal-delay-3 { transition-delay: 0.24s; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+      .marquee-track {
+        animation: none !important;
+      }
+    }
+
+    /* Layout & Containers */
+    .container-wide {
+      width: calc(100% - 40px);
+      max-width: 1320px;
+      margin-inline: auto;
+    }
+
+    @media (min-width: 641px) {
+      .container-wide {
+        width: calc(100% - 48px);
+      }
+    }
+
+    @media (min-width: 901px) {
+      .container-wide {
+        width: min(100% - 96px, 1320px);
+      }
+    }
+
+    .section-padding {
+      padding-block: 80px;
+    }
+
+    @media (min-width: 768px) {
+      .section-padding {
+        padding-block: 100px;
+      }
+    }
+
+    /* Header & Navigation */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid color-mix(in oklab, var(--border) 75%, transparent);
+      background-color: color-mix(in oklab, var(--background) 86%, transparent);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: box-shadow 0.25s ease;
+    }
+
+    .site-header.scrolled {
+      box-shadow: 0 8px 24px -12px rgba(15, 23, 42, 0.12);
+    }
+
+    .header-inner {
+      display: flex;
+      height: 80px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      font-family: var(--font-display);
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 800;
+    }
+
+    @media (min-width: 641px) {
+      .brand {
+        font-size: 22px;
+      }
+    }
+
+    .brand-logo {
+      width: 40px;
+      height: 40px;
+      object-fit: contain;
+      border-radius: 8px;
+      flex-shrink: 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+
+    .brand-accent {
+      color: var(--brand-green);
+    }
+
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 26px;
+    }
+
+    .header-right {
+      display: none;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .header-social {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      color: var(--muted-foreground);
+      background: var(--background);
+      transition: all 0.2s ease;
+    }
+
+    .header-social:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .mobile-menu-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .mobile-menu-btn:hover {
+      background-color: var(--accent);
+    }
+
+    @media (min-width: 980px) {
+      .desktop-nav {
+        display: flex;
+      }
+      .header-right {
+        display: flex;
+      }
+      .mobile-menu-btn {
+        display: none;
+      }
+    }
+
+    .nav-link {
+      color: var(--muted-foreground);
+      font-size: 13.5px;
+      font-weight: 500;
+      position: relative;
+      padding-block: 4px;
+      transition: color 0.2s;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background: var(--brand-green);
+      border-radius: 2px;
+      transition: width 0.25s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--primary);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .mobile-navigation {
+      background: var(--background);
+      border-bottom: 1px solid var(--border);
+      z-index: 30;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      padding: 24px;
+      position: absolute;
+      top: 80px;
+      left: 0;
+      right: 0;
+      box-shadow: 0 14px 28px -8px rgba(0, 0, 0, 0.12);
+    }
+
+    .mobile-socials-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      white-space: nowrap;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s, opacity 0.2s, transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .btn svg {
+      transition: transform 0.2s ease;
+    }
+
+    .btn:hover svg {
+      transform: translateX(2px);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--primary) 0%, color-mix(in oklab, var(--primary) 82%, var(--brand-green)) 100%);
+      color: var(--primary-foreground);
+      height: 40px;
+      padding-inline: 22px;
+      box-shadow: 0 6px 16px -6px color-mix(in oklab, var(--primary) 55%, transparent);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 22px -6px color-mix(in oklab, var(--primary) 65%, transparent);
+    }
+
+    .btn-lg {
+      height: 50px;
+      padding-inline: 26px;
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      background-color: var(--background);
+      height: 40px;
+      padding-inline: 18px;
+      margin-top: 28px;
+    }
+
+    .btn-outline:hover {
+      background-color: var(--accent);
+      color: var(--accent-foreground);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline-lg {
+      border: 1px solid var(--border);
+      background-color: var(--background);
+      height: 50px;
+      padding-inline: 24px;
+    }
+
+    .btn-outline-lg:hover {
+      background-color: var(--accent);
+      color: var(--accent-foreground);
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background-color: var(--brand-green);
+      color: #ffffff;
+      height: 48px;
+      width: 100%;
+      justify-content: space-between;
+      padding-inline: 20px;
+    }
+
+    .btn-whatsapp:hover {
+      opacity: 0.94;
+      transform: translateY(-2px);
+    }
+
+    .btn-email {
+      background-color: var(--primary);
+      color: var(--primary-foreground);
+      height: 48px;
+      width: 100%;
+      justify-content: space-between;
+      padding-inline: 20px;
+    }
+
+    .btn-email:hover {
+      opacity: 0.94;
+      transform: translateY(-2px);
+    }
+
+    /* Typography & Common UI */
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 1.6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .eyebrow::before {
+      content: "";
+      background: var(--brand-green);
+      border-radius: 50%;
+      width: 7px;
+      height: 7px;
+      box-shadow: 0 0 0 4px color-mix(in oklab, var(--secondary) 55%, transparent);
+    }
+
+    .section-heading {
+      font-size: 32px;
+      font-weight: 700;
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+    }
+
+    @media (min-width: 641px) {
+      .section-heading {
+        font-size: 42px;
+      }
+    }
+
+    .section-header-row {
+      margin-bottom: 44px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .section-header-row {
+        flex-direction: row;
+        align-items: flex-end;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      background-color: var(--background);
+      background-image:
+        radial-gradient(56% 72% at 82% 18%, color-mix(in oklab, var(--primary) 16%, transparent) 0%, transparent 66%),
+        radial-gradient(48% 64% at 14% 84%, color-mix(in oklab, var(--secondary) 32%, transparent) 0%, transparent 68%),
+        linear-gradient(to right, color-mix(in oklab, var(--border) 32%, transparent) 1px, transparent 1px),
+        linear-gradient(to bottom, color-mix(in oklab, var(--border) 32%, transparent) 1px, transparent 1px);
+      background-size: 100% 100%, 100% 100%, 44px 44px, 44px 44px;
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @media (min-width: 641px) {
+      .hero {
+        min-height: 680px;
+      }
+    }
+
+    .hero-content {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-block: 48px 56px;
+      animation: appear 0.75s cubic-bezier(0.22, 1, 0.36, 1) both;
+      position: relative;
+      z-index: 2;
+    }
+
+    @media (min-width: 641px) {
+      .hero-content {
+        padding-block: 68px 64px;
+      }
+    }
+
+    .hero-logo-wrap {
+      padding: 8px;
+      border-radius: 20px;
+      background: color-mix(in oklab, var(--background) 85%, white);
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 32px -12px rgba(15, 23, 42, 0.16);
+      margin-bottom: 22px;
+      animation: floatLogo 5s ease-in-out infinite;
+    }
+
+    @keyframes floatLogo {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    .hero-logo {
+      width: 96px;
+      height: 96px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .hero-title {
+      max-width: 360px;
+      margin-top: 18px;
+      font-size: 34px;
+      font-weight: 800;
+      line-height: 1.12;
+      letter-spacing: -0.025em;
+    }
+
+    .hero-title span {
+      background: linear-gradient(120deg, var(--primary) 0%, var(--brand-green) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @media (min-width: 641px) {
+      .hero-title {
+        max-width: 720px;
+        margin-top: 20px;
+        font-size: 48px;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .hero-title {
+        max-width: 860px;
+        font-size: 58px;
+      }
+    }
+
+    .hero-copy {
+      max-width: 340px;
+      color: var(--muted-foreground);
+      margin-top: 20px;
+      font-size: 15px;
+      line-height: 1.75;
+    }
+
+    @media (min-width: 641px) {
+      .hero-copy {
+        max-width: 610px;
+        margin-top: 22px;
+        font-size: 16.5px;
+      }
+    }
+
+    .hero-actions {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+    }
+
+    .pills-row {
+      margin-top: 32px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .pill {
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--background) 90%, white);
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 500;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+    }
+
+    .scroll-cue {
+      margin-top: 34px;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted-foreground);
+      transition: color 0.2s;
+    }
+
+    .scroll-cue:hover {
+      color: var(--primary);
+    }
+
+    .scroll-cue svg {
+      animation: bounceDown 1.8s infinite;
+    }
+
+    @keyframes bounceDown {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(5px); }
+    }
+
+    /* Animated Marquee Strip */
+    .banner-strip {
+      border-block: 1px solid var(--border);
+      background-color: var(--ink-surface);
+      color: var(--ink-foreground);
+      padding-block: 16px;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      gap: 36px;
+      animation: marqueeScroll 28s linear infinite;
+    }
+
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    .marquee-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .marquee-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--secondary);
+    }
+
+    @keyframes marqueeScroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Services Grid (3 Pillars) */
+    .services-grid {
+      display: grid;
+      gap: 22px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .services-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .service-card {
+      border: 1px solid var(--border);
+      background: var(--background);
+      border-radius: 14px;
+      display: flex;
+      flex-direction: column;
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s, box-shadow 0.3s;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--primary), var(--brand-green));
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    @media (min-width: 641px) {
+      .service-card {
+        padding: 30px;
+      }
+    }
+
+    .service-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-6px);
+      box-shadow: 0 18px 34px -16px rgba(15, 23, 42, 0.14);
+    }
+
+    .service-card:hover::before {
+      opacity: 1;
+    }
+
+    .service-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .service-icon {
+      background: var(--accent);
+      width: 50px;
+      height: 50px;
+      color: var(--primary);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      transition: transform 0.25s ease, background-color 0.25s ease, color 0.25s ease;
+    }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.06);
+      background: var(--primary);
+      color: var(--primary-foreground);
+    }
+
+    .service-title {
+      margin-top: 24px;
+      margin-bottom: 12px;
+      font-size: 19px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .service-desc {
+      margin-bottom: 20px;
+      font-size: 13.5px;
+      line-height: 1.65;
+      color: var(--muted-foreground);
+    }
+
+    .include-list {
+      display: grid;
+      gap: 9px;
+      margin-bottom: 18px;
+    }
+
+    .include-list li {
+      color: var(--muted-foreground);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12.5px;
+      line-height: 1.55;
+    }
+
+    .include-list li svg {
+      flex: none;
+      margin-top: 3px;
+      color: var(--brand-green);
+    }
+
+    .service-metric {
+      border-top: 1px solid var(--border);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      color: var(--primary);
+      margin-top: auto;
+      padding-top: 14px;
+      font-size: 10.5px;
+      font-weight: 700;
+    }
+
+    .service-tags {
+      margin-top: 10px;
+      font-size: 11px;
+      color: var(--muted-foreground);
+    }
+
+    .service-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 600;
+      margin-top: 16px;
+      padding-block: 8px;
+      cursor: pointer;
+    }
+
+    .service-cta-btn:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    /* Plans & Modalities Section */
+    .plans-section {
+      background: linear-gradient(180deg, var(--muted) 0%, var(--background) 100%);
+      border-block: 1px solid var(--border);
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+
+    @media (min-width: 901px) {
+      .plans-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .plan-card {
+      border: 1px solid var(--border);
+      background: var(--background);
+      border-radius: 14px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.25s, box-shadow 0.3s;
+    }
+
+    @media (min-width: 641px) {
+      .plan-card {
+        padding: 32px;
+      }
+    }
+
+    .plan-card:hover {
+      border-color: var(--primary);
+      transform: translateY(-5px);
+      box-shadow: 0 20px 36px -16px rgba(15, 23, 42, 0.14);
+    }
+
+    .plan-card.plan-featured {
+      border-color: color-mix(in oklab, var(--brand-green) 55%, var(--border));
+      box-shadow: 0 14px 32px -12px color-mix(in oklab, var(--brand-green) 24%, transparent);
+    }
+
+    .plan-header {
+      margin-bottom: 18px;
+    }
+
+    .plan-badges-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    .plan-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--primary);
+      background: var(--accent);
+      padding: 5px 11px;
+      border-radius: 9999px;
+    }
+
+    .plan-popular-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: var(--secondary-foreground);
+      background: var(--secondary);
+      padding: 5px 10px;
+      border-radius: 9999px;
+    }
+
+    .plan-title {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--foreground);
+      line-height: 1.25;
+    }
+
+    .plan-ideal {
+      margin-top: 6px;
+      font-size: 13.5px;
+      color: var(--muted-foreground);
+    }
+
+    .plan-pricing-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-top: auto;
+      margin-bottom: 20px;
+      padding-top: 18px;
+      border-top: 1px solid var(--border);
+    }
+
+    @media (min-width: 560px) {
+      .plan-pricing-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .price-box {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 15px;
+      background: var(--background);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .price-box.growth-box {
+      border-color: color-mix(in oklab, var(--brand-green) 45%, var(--border));
+      background: color-mix(in oklab, var(--secondary) 18%, var(--background));
+    }
+
+    .price-label {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.9px;
+      color: var(--muted-foreground);
+    }
+
+    .price-box.growth-box .price-label {
+      color: var(--brand-green);
+    }
+
+    .price-amount {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--foreground);
+      line-height: 1.2;
+    }
+
+    .price-amount small {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--muted-foreground);
+    }
+
+    .price-note {
+      font-size: 12px;
+      line-height: 1.5;
+      color: var(--muted-foreground);
+    }
+
+    .price-note strong {
+      color: var(--foreground);
+      font-weight: 600;
+    }
+
+    .plan-cta-btn {
+      width: 100%;
+      height: 46px;
+      justify-content: space-between;
+      padding-inline: 18px;
+    }
+
+    .plans-disclaimer {
+      margin-top: 28px;
+      border: 1px solid var(--border);
+      background: var(--background);
+      border-left: 4px solid var(--brand-green);
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--muted-foreground);
+    }
+
+    /* Team / Agile Studio Section */
+    .team-section {
+      background: var(--background);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .team-box {
+      border: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--background) 0%, var(--muted) 100%);
+      border-radius: 16px;
+      padding: 28px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 32px;
+      align-items: center;
+      box-shadow: 0 12px 30px -18px rgba(15, 23, 42, 0.12);
+    }
+
+    @media (min-width: 901px) {
+      .team-box {
+        grid-template-columns: 1.25fr 0.75fr;
+        padding: 46px;
+        gap: 48px;
+      }
+    }
+
+    .team-lead {
+      margin-top: 18px;
+      font-size: 15.5px;
+      line-height: 1.8;
+      color: var(--muted-foreground);
+    }
+
+    .team-pillars {
+      display: grid;
+      gap: 14px;
+    }
+
+    .team-pillar-item {
+      border: 1px solid var(--border);
+      background: var(--background);
+      border-radius: 12px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      transition: transform 0.25s ease, border-color 0.25s ease;
+    }
+
+    .team-pillar-item:hover {
+      transform: translateX(4px);
+      border-color: var(--brand-green);
+    }
+
+    .team-pillar-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: var(--primary);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+
+    .team-pillar-item strong {
+      display: block;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--foreground);
+    }
+
+    .team-pillar-item span {
+      display: block;
+      margin-top: 3px;
+      font-size: 12.5px;
+      line-height: 1.5;
+      color: var(--muted-foreground);
+    }
+
+    /* Process Section */
+    .process {
+      background: radial-gradient(60% 80% at 90% 10%, color-mix(in oklab, var(--primary) 26%, transparent) 0%, transparent 65%),
+                  var(--ink-surface);
+      color: var(--ink-foreground);
+    }
+
+    .process .eyebrow {
+      color: var(--secondary);
+    }
+
+    .process .eyebrow::before {
+      background: var(--secondary);
+      box-shadow: 0 0 0 4px color-mix(in oklab, var(--secondary) 24%, transparent);
+    }
+
+    .phases-grid {
+      margin-top: 56px;
+      display: grid;
+      gap: 32px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .phases-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .phase {
+      border-top: 1px solid color-mix(in oklab, var(--ink-foreground) 22%, transparent);
+      padding-top: 22px;
+      transition: border-color 0.25s ease;
+    }
+
+    .phase:hover {
+      border-top-color: var(--secondary);
+    }
+
+    .process-number {
+      color: var(--secondary);
+      font-family: var(--font-display);
+      font-size: 46px;
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .process-label {
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--secondary);
+      margin-top: 12px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+
+    .phase-title {
+      margin-top: 14px;
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .phase-desc {
+      font-size: 14px;
+      line-height: 1.65;
+      opacity: 0.78;
+    }
+
+    .process-detail {
+      border-top: 1px solid color-mix(in oklab, var(--ink-foreground) 16%, transparent);
+      margin-top: 16px;
+      letter-spacing: 0.3px;
+      color: color-mix(in oklab, var(--ink-foreground) 76%, transparent);
+      padding-top: 12px;
+      font-size: 11px;
+    }
+
+    .deliverables-wrap {
+      margin-top: 64px;
+      border-top: 1px solid color-mix(in oklab, var(--border) 25%, transparent);
+      padding-top: 40px;
+    }
+
+    .deliverables-grid {
+      margin-top: 24px;
+      display: grid;
+      gap: 16px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      .deliverables-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .deliverables-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    .deliverable {
+      border: 1px solid color-mix(in oklab, var(--ink-foreground) 18%, transparent);
+      background: color-mix(in oklab, var(--ink-foreground) 4%, transparent);
+      color: color-mix(in oklab, var(--ink-foreground) 92%, transparent);
+      border-radius: 10px;
+      padding: 15px 16px;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .deliverable svg {
+      color: var(--secondary);
+      flex: none;
+    }
+
+    /* Sectors Section */
+    .sectors-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      .sectors-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .sectors-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .sector-card {
+      border: 1px solid var(--border);
+      background: var(--background);
+      border-radius: 12px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 22px;
+      transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+    }
+
+    .sector-card:hover {
+      border-color: var(--brand-green);
+      transform: translateY(-4px);
+      box-shadow: 0 12px 24px -14px rgba(15, 23, 42, 0.12);
+    }
+
+    .sector-icon {
+      background: var(--accent);
+      width: 42px;
+      height: 42px;
+      color: var(--primary);
+      border-radius: 10px;
+      flex: none;
+      display: grid;
+      place-items: center;
+    }
+
+    /* FAQ Accordion */
+    .faq-band {
+      background: var(--muted);
+    }
+
+    .faq-layout {
+      display: grid;
+      gap: 48px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .faq-layout {
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 80px;
+      }
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 0;
+    }
+
+    .faq-item:first-child {
+      border-top: 1px solid var(--border);
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      font-family: var(--font-display);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      font-size: 15px;
+      font-weight: 600;
+      list-style: none;
+      transition: color 0.2s;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary:hover {
+      color: var(--primary);
+    }
+
+    .faq-icon {
+      color: var(--primary);
+      flex: none;
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .faq-item[open] .faq-icon {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-width: 640px;
+      color: var(--muted-foreground);
+      margin-top: 12px;
+      font-size: 13.5px;
+      line-height: 1.75;
+      animation: faqSlideDown 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    @keyframes faqSlideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-6px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Contact Section & Form */
+    .contact-layout {
+      display: grid;
+      gap: 48px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .contact-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+      }
+    }
+
+    .direct-contact-box {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .direct-contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--background);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--foreground);
+      transition: border-color 0.2s, transform 0.2s, color 0.2s, box-shadow 0.2s;
+    }
+
+    .direct-contact-link:hover {
+      border-color: var(--brand-green);
+      color: var(--primary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 14px -8px rgba(15, 23, 42, 0.14);
+    }
+
+    .direct-contact-link svg {
+      color: var(--brand-green);
+      flex-shrink: 0;
+    }
+
+    .social-pills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 2px;
+    }
+
+    @media (max-width: 480px) {
+      .social-pills-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .next-steps-wrap {
+      margin-top: 36px;
+      border-top: 1px solid var(--border);
+      padding-top: 30px;
+    }
+
+    .next-steps {
+      margin-top: 22px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .next-step {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .next-step > span {
+      background: var(--accent);
+      width: 26px;
+      height: 26px;
+      color: var(--primary);
+      border-radius: 50%;
+      flex: none;
+      display: grid;
+      place-items: center;
+      margin-top: 2px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--background) 92%, white);
+      padding: 26px;
+      border-radius: 16px;
+      box-shadow: 0 12px 28px -16px rgba(15, 23, 42, 0.1);
+    }
+
+    @media (min-width: 641px) {
+      .contact-form {
+        padding: 32px;
+      }
+    }
+
+    .form-row-2 {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      .form-row-2 {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .field-label {
+      margin-bottom: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      display: block;
+    }
+
+    .form-field {
+      border: 1px solid var(--border);
+      background: var(--background);
+      width: 100%;
+      border-radius: 8px;
+      outline: none;
+      padding: 13px 14px;
+      font-size: 14px;
+      display: block;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-field:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px color-mix(in oklab, var(--primary) 16%, transparent);
+    }
+
+    textarea.form-field {
+      min-height: 112px;
+      resize: vertical;
+    }
+
+    .consent-check {
+      color: var(--muted-foreground);
+      cursor: pointer;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 12px;
+      line-height: 1.6;
+      margin-top: 4px;
+    }
+
+    .consent-check input {
+      width: 15px;
+      height: 15px;
+      accent-color: var(--primary);
+      cursor: pointer;
+      flex: none;
+      margin-top: 3px;
+    }
+
+    .consent-check a {
+      color: var(--primary);
+      text-underline-offset: 3px;
+      text-decoration: underline;
+      font-weight: 500;
+    }
+
+    .consent-check a:hover {
+      color: var(--brand-green);
+    }
+
+    .form-actions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    @media (max-width: 540px) {
+      .form-actions-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--border);
+      padding-block: 52px;
+      background: var(--background);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+
+    @media (min-width: 641px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 34px;
+      }
+    }
+
+    @media (min-width: 901px) {
+      .footer-grid {
+        grid-template-columns: 1.35fr 1fr 1fr 1fr;
+      }
+    }
+
+    .footer-title {
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      color: var(--muted-foreground);
+      margin-bottom: 14px;
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .footer-link {
+      color: var(--muted-foreground);
+      padding: 5px 0;
+      font-size: 13px;
+      transition: color 0.2s;
+      display: block;
+    }
+
+    .footer-link:hover {
+      color: var(--primary);
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .footer-social-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--foreground);
+      transition: all 0.2s ease;
+    }
+
+    .footer-social-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      background: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .footer-bottom {
+      margin-top: 42px;
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--muted-foreground);
+    }
+
+    @media (min-width: 640px) {
+      .footer-bottom {
+        flex-direction: row;
+      }
+    }
+
+    /* Floating WhatsApp Button */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 50;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background-color: #10b981;
+      color: #ffffff;
+      padding: 12px 18px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.55);
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .whatsapp-float:hover {
+      background-color: #059669;
+      transform: translateY(-3px) scale(1.02);
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Utilities */
+    .text-muted { color: var(--muted-foreground); }
+    .text-primary { color: var(--primary); }
+    .mt-2 { margin-top: 8px; }
+    .mt-4 { margin-top: 16px; }
+    .mt-5 { margin-top: 20px; }
+    .mt-6 { margin-top: 24px; }
+    .mt-8 { margin-top: 32px; }
+    .mb-3 { margin-bottom: 12px; }
+    .mb-5 { margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+  <!-- Barra de progreso de lectura -->
+  <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="site-header" id="site-header">
+    <div class="container-wide header-inner">
+      <a href="#inicio" class="brand" aria-label="EG NEXUS, ir al inicio">
+        <img src="logo.jpg" alt="Logotipo oficial de EG NEXUS" class="brand-logo" width="40" height="40">
+        <span>EG <span class="brand-accent">NEXUS</span></span>
+      </a>
+
+      <nav aria-label="Navegación principal" class="desktop-nav">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#planes" class="nav-link">Planes</a>
+        <a href="#equipo" class="nav-link">Equipo</a>
+        <a href="#nosotros" class="nav-link">Nuestro enfoque</a>
+        <a href="#preguntas" class="nav-link">Preguntas</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <div class="header-right">
+        <a href="https://www.instagram.com/eg_nexus/" target="_blank" rel="noopener noreferrer" class="header-social" aria-label="Instagram de EG NEXUS" title="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.facebook.com/profile.php?id=61595029054017" target="_blank" rel="noopener noreferrer" class="header-social" aria-label="Facebook de EG NEXUS" title="Facebook">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        </a>
+        <a href="#contacto" class="btn btn-primary">
+          Platicar sobre mi proyecto
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+        </a>
+      </div>
+
+      <button type="button" class="mobile-menu-btn" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+      <div class="container-wide hero-content">
+        <div class="hero-logo-wrap">
+          <img src="logo.jpg" alt="Logotipo de EG NEXUS Estudio Digital" class="hero-logo" width="96" height="96">
+        </div>
+        <div class="eyebrow">Estudio digital en México · Creatividad y datos</div>
+        <h1 class="hero-title">Impulsamos tu negocio en redes sociales y web con <span>estrategia y datos claros.</span></h1>
+        <p class="hero-copy">
+          Ayudamos a marcas, emprendedores y negocios en crecimiento a construir su presencia digital desde cero, crear contenido que conecte y escalar sus ventas con modelos flexibles.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#planes" class="btn btn-primary btn-lg">
+            Ver planes y precios
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="#contacto" class="btn btn-outline-lg">
+            Platicar sobre mi proyecto
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+
+        <div class="pills-row">
+          <span class="pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="text-primary" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Presencia desde cero
+          </span>
+          <span class="pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="text-primary" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Tarifa fija o Growth Partner
+          </span>
+          <span class="pill">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" class="text-primary" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+            Reportes que sí se entienden
+          </span>
+        </div>
+
+        <a href="#servicios" class="scroll-cue" aria-label="Deslizar hacia servicios">
+          <span>Explora cómo trabajamos</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- Cinta dinámica (Marquee) -->
+    <div class="banner-strip" aria-label="Especialidades de EG NEXUS">
+      <div class="marquee-track">
+        <span class="marquee-item"><span class="marquee-dot"></span>Gestión de Redes Sociales</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Diseño Web y Landing Pages</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Meta Ads y Google Ads</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Modelo Growth Partner</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Análisis de Datos Claros</span>
+        <span class="marquee-item"><span class="marquee-dot"></span>Trato Directo en México</span>
+        <!-- Duplicado para bucle continuo -->
+        <span class="marquee-item" aria-hidden="true"><span class="marquee-dot"></span>Gestión de Redes Sociales</span>
+        <span class="marquee-item" aria-hidden="true"><span class="marquee-dot"></span>Diseño Web y Landing Pages</span>
+        <span class="marquee-item" aria-hidden="true"><span class="marquee-dot"></span>Meta Ads y Google Ads</span>
+        <span class="marquee-item" aria-hidden="true"><span class="marquee-dot"></span>Modelo Growth Partner</span>
+        <span class="marquee-item" aria-hidden="true"><span class="marquee-dot"></span>Análisis de Datos Claros</span>
+        <span class="marquee-item" aria-hidden="true"><span class="marquee-dot"></span>Trato Directo en México</span>
+      </div>
+    </div>
+
+    <!-- Servicios (3 Pilares) -->
+    <section id="servicios" class="container-wide section-padding">
+      <div class="section-header-row reveal">
+        <div>
+          <div class="eyebrow mb-5">Lo que hacemos</div>
+          <h2 class="section-heading">Tres pilares claros para<br>crecer tu presencia digital.</h2>
+        </div>
+        <p class="text-muted" style="max-width: 340px; font-size: 14px; line-height: 1.75;">
+          Sin servicios de relleno. Empezamos por lo que tu proyecto necesita hoy para verse profesional y generar clientes.
+        </p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Servicio 01 -->
+        <article class="service-card reveal reveal-delay-1">
+          <div class="service-card-top">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15.707 21.293a1 1 0 0 1-1.414 0l-1.586-1.586a1 1 0 0 1 0-1.414l5.586-5.586a1 1 0 0 1 1.414 0l1.586 1.586a1 1 0 0 1 0 1.414z"/><path d="m18 13-1.375-6.874a1 1 0 0 0-.746-.776L3.235 2.028a1 1 0 0 0-1.207 1.207L5.35 15.879a1 1 0 0 0 .776.746L13 18"/><path d="m2.3 2.3 7.286 7.286"/><circle cx="11" cy="11" r="2"/></svg>
+            </div>
+            <span class="text-muted" style="font-size: 12px; font-weight: 700;">01</span>
+          </div>
+          <h3 class="service-title">Gestión y Creación de Contenido para Redes Sociales</h3>
+          <p class="service-desc">Creación de piezas gráficas y textos desde cero, calendario mensual y administración de hasta 3 redes sociales para darle constancia y orden a tu marca.</p>
+          <ul class="include-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Diseño gráfico, textos y formatos pensados para tu audiencia
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Calendario mensual organizado y administración de hasta 3 redes
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Reporte mensual con lectura práctica de resultados
+            </li>
+          </ul>
+          <p class="service-metric">Lo que medimos: alcance, interacción y mensajes recibidos</p>
+          <p class="service-tags">Instagram · Facebook · TikTok</p>
+          <button type="button" class="service-cta-btn" data-service="Plan Impulso Inicial (Redes)">
+            Me interesa este servicio
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </button>
+        </article>
+
+        <!-- Servicio 02 -->
+        <article class="service-card reveal reveal-delay-2">
+          <div class="service-card-top">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+            </div>
+            <span class="text-muted" style="font-size: 12px; font-weight: 700;">02</span>
+          </div>
+          <h3 class="service-title">Diseño de Páginas Web y Landing Pages</h3>
+          <p class="service-desc">Sitios web informativos rápidos, claros, adaptados a celular y listos para captar clientes por WhatsApp o formulario sin complicaciones técnicas.</p>
+          <ul class="include-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Diseño limpio, veloz y 100% adaptable a teléfonos celulares
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Botón directo a WhatsApp y formulario de contacto funcional
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Estructura pensada para aparecer en Google y medir visitas
+            </li>
+          </ul>
+          <p class="service-metric">Lo que medimos: visitas y contactos generados</p>
+          <p class="service-tags">Web informativa · Landing page · WhatsApp</p>
+          <button type="button" class="service-cta-btn" data-service="Sitio Web Express">
+            Me interesa este servicio
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </button>
+        </article>
+
+        <!-- Servicio 03 -->
+        <article class="service-card reveal reveal-delay-3">
+          <div class="service-card-top">
+            <div class="service-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11 6a13 13 0 0 0 8.4-2.8A1 1 0 0 1 21 4v12a1 1 0 0 1-1.6.8A13 13 0 0 0 11 14H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2z"/><path d="M6 14a12 12 0 0 0 2.4 7.2 2 2 0 0 0 3.2-2.4A8 8 0 0 1 10 14"/><path d="M8 6v8"/></svg>
+            </div>
+            <span class="text-muted" style="font-size: 12px; font-weight: 700;">03</span>
+          </div>
+          <h3 class="service-title">Campañas de Publicidad Inicial (Meta Ads y Google Ads)</h3>
+          <p class="service-desc">Configuración y lanzamiento de primeras campañas enfocadas en mensajes directos o clientes locales, con presupuestos controlados y reportes fáciles de entender.</p>
+          <ul class="include-list">
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Configuración limpia de audiencias, ubicación y anuncios
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Optimización semanal cuidando cada peso invertido
+            </li>
+            <li>
+              <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Reportes claros sin tecnicismos innecesarios
+            </li>
+          </ul>
+          <p class="service-metric">Lo que medimos: costo por prospecto</p>
+          <p class="service-tags">Meta Ads · Google Ads · Clientes locales</p>
+          <button type="button" class="service-cta-btn" data-service="Gestión de Pauta (Ads)">
+            Me interesa este servicio
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </button>
+        </article>
+      </div>
+
+      <p class="mt-8 text-muted reveal" style="max-width: 672px; font-size: 13px;">
+        ¿No sabes por dónde empezar? Cuéntanos en qué etapa está tu proyecto y te recomendamos el camino más sensato para hoy.
+      </p>
+    </section>
+
+    <!-- Planes y Modalidades (Fijo vs. Growth Partner) -->
+    <section id="planes" class="plans-section section-padding">
+      <div class="container-wide">
+        <div class="section-header-row reveal">
+          <div>
+            <div class="eyebrow mb-5">Planes y modalidades</div>
+            <h2 class="section-heading">Dos formas de trabajar juntos.</h2>
+          </div>
+          <p class="text-muted" style="max-width: 490px; font-size: 14px; line-height: 1.75;">
+            Elige una tarifa fija tradicional o inicia con una inversión mensual reducida bajo nuestro modelo Growth Partner, donde compartimos resultados cuando tus ventas son medibles digitalmente.
+          </p>
+        </div>
+
+        <div class="plans-grid">
+          <!-- Plan 1 -->
+          <article class="plan-card reveal reveal-delay-1">
+            <div class="plan-header">
+              <div class="plan-badges-row">
+                <span class="plan-badge">01 · Redes Sociales</span>
+              </div>
+              <h3 class="plan-title">Impulso Inicial (Redes)</h3>
+              <p class="plan-ideal">Ideal para autores, creadores y emprendedores.</p>
+            </div>
+
+            <ul class="include-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Gestión de 2 redes sociales
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                8 publicaciones al mes (diseño + texto)
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Enlace de contacto o compra optimizado y reporte mensual
+              </li>
+            </ul>
+
+            <div class="plan-pricing-grid">
+              <div class="price-box">
+                <span class="price-label">Modalidad Tarifa Fija</span>
+                <div class="price-amount">$2,900 <small>MXN / mes</small></div>
+                <p class="price-note"><strong>100% de las ventas para ti.</strong> Inversión fija mensual sin comisiones.</p>
+              </div>
+              <div class="price-box growth-box">
+                <span class="price-label">Modalidad Growth Partner</span>
+                <div class="price-amount">$1,500 <small>MXN / mes</small></div>
+                <p class="price-note">+ <strong>15% a 20%</strong> por venta generada por canal digital medible.</p>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary plan-cta-btn" data-service="Plan Impulso Inicial (Redes)">
+              Cotizar Impulso Inicial
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </button>
+          </article>
+
+          <!-- Plan 2 (Destacado) -->
+          <article class="plan-card plan-featured reveal reveal-delay-2">
+            <div class="plan-header">
+              <div class="plan-badges-row">
+                <span class="plan-badge">02 · Redes + Video + Datos</span>
+                <span class="plan-popular-tag">Más solicitado</span>
+              </div>
+              <h3 class="plan-title">Presencia Activa (Redes)</h3>
+              <p class="plan-ideal">Ideal para negocios de servicios locales, transporte y pymes.</p>
+            </div>
+
+            <ul class="include-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Gestión de 3 redes sociales
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                12 publicaciones + 3 videos cortos al mes
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Captura de prospectos por WhatsApp y análisis de datos
+              </li>
+            </ul>
+
+            <div class="plan-pricing-grid">
+              <div class="price-box">
+                <span class="price-label">Modalidad Tarifa Fija</span>
+                <div class="price-amount">$4,800 <small>MXN / mes</small></div>
+                <p class="price-note"><strong>100% de las ventas para ti.</strong> Operación mensual completa sin comisiones.</p>
+              </div>
+              <div class="price-box growth-box">
+                <span class="price-label">Modalidad Growth Partner</span>
+                <div class="price-amount">$2,200 <small>MXN / mes</small></div>
+                <p class="price-note">+ <strong>8% a 12%</strong> por servicio cerrado rastreable.</p>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary plan-cta-btn" data-service="Plan Presencia Activa (Redes)">
+              Cotizar Presencia Activa
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </button>
+          </article>
+
+          <!-- Plan 3 -->
+          <article class="plan-card reveal reveal-delay-1">
+            <div class="plan-header">
+              <div class="plan-badges-row">
+                <span class="plan-badge">03 · Desarrollo Web</span>
+              </div>
+              <h3 class="plan-title">Sitio Web Express</h3>
+              <p class="plan-ideal">Ideal para formalizar tu marca y captar clientes en Google y WhatsApp.</p>
+            </div>
+
+            <ul class="include-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Web responsiva de hasta 4 secciones adaptada a celular
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Botón de WhatsApp, formulario de contacto y medición básica
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                No incluye dominio ni hosting (te ayudamos a contratarlos a tu nombre)
+              </li>
+            </ul>
+
+            <div class="plan-pricing-grid">
+              <div class="price-box">
+                <span class="price-label">Modalidad Tarifa Fija</span>
+                <div class="price-amount">$4,200 <small>MXN</small></div>
+                <p class="price-note"><strong>Pago único.</strong> Tu sitio web listo y 100% tuyo.</p>
+              </div>
+              <div class="price-box growth-box">
+                <span class="price-label">Modalidad Growth Partner</span>
+                <div class="price-amount">$2,200 <small>MXN</small></div>
+                <p class="price-note">Pago único + <strong>10%</strong> sobre ventas cerradas desde la web (primeros 6 meses).</p>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary plan-cta-btn" data-service="Sitio Web Express">
+              Cotizar Sitio Web Express
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </button>
+          </article>
+
+          <!-- Plan 4 -->
+          <article class="plan-card reveal reveal-delay-2">
+            <div class="plan-header">
+              <div class="plan-badges-row">
+                <span class="plan-badge">04 · Publicidad Digital</span>
+              </div>
+              <h3 class="plan-title">Gestión de Pauta (Ads)</h3>
+              <p class="plan-ideal">Ideal para acelerar ventas con Meta Ads o Google Ads.</p>
+            </div>
+
+            <ul class="include-list">
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Configuración inicial de campañas y segmentación
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                Optimización semanal y reporte claro de resultados
+              </li>
+              <li>
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+                El saldo de anuncios lo paga el cliente directo a la plataforma
+              </li>
+            </ul>
+
+            <div class="plan-pricing-grid">
+              <div class="price-box">
+                <span class="price-label">Modalidad Tarifa Fija</span>
+                <div class="price-amount">$2,500 <small>MXN / mes</small></div>
+                <p class="price-note">Tarifa fija por gestión, optimización y seguimiento.</p>
+              </div>
+              <div class="price-box growth-box">
+                <span class="price-label">Modalidad Growth Partner</span>
+                <div class="price-amount">$1,400 <small>MXN / mes</small></div>
+                <p class="price-note">+ <strong>10%</strong> sobre ventas atribuidas a campañas.</p>
+              </div>
+            </div>
+
+            <button type="button" class="btn btn-primary plan-cta-btn" data-service="Gestión de Pauta (Ads)">
+              Cotizar Gestión de Pauta
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+            </button>
+          </article>
+        </div>
+
+        <p class="plans-disclaimer reveal">
+          <em>Nota: La modalidad Growth Partner está sujeta a evaluación previa y aplica únicamente cuando el producto o servicio ya está listo para venderse y las ventas o prospectos pueden medirse mediante enlaces, códigos o canales digitales rastreables.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- Equipo Ágil, Técnico y Cercano -->
+    <section id="equipo" class="team-section section-padding">
+      <div class="container-wide">
+        <div class="team-box reveal">
+          <div>
+            <div class="eyebrow mb-5">Quiénes somos</div>
+            <h2 class="section-heading">Un equipo ágil, técnico y cercano</h2>
+            <p class="team-lead">
+              En EG NEXUS combinamos creatividad con formación en análisis de datos, desarrollo web y publicidad digital para que no tengas que adivinar qué funciona en internet. Trabajamos sin intermediarios: tratas directamente con quienes construyen tu marca día a día, usando los datos para mejorar cada mes.
+            </p>
+            <div class="mt-6">
+              <a href="#contacto" class="btn btn-primary">
+                Platicar con el equipo
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="team-pillars">
+            <div class="team-pillar-item">
+              <div class="team-pillar-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <div>
+                <strong>Trato directo, cero burocracia</strong>
+                <span>Hablas con las mismas personas que diseñan, programan y analizan tu proyecto.</span>
+              </div>
+            </div>
+
+            <div class="team-pillar-item">
+              <div class="team-pillar-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"/><path d="m19 9-5 5-4-4-3 3"/></svg>
+              </div>
+              <div>
+                <strong>Respaldo técnico real</strong>
+                <span>Análisis de datos, desarrollo web y pauta aplicados a metas aterrizadas.</span>
+              </div>
+            </div>
+
+            <div class="team-pillar-item">
+              <div class="team-pillar-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+              </div>
+              <div>
+                <strong>Mejora continua cada mes</strong>
+                <span>Medimos lo que publicamos y ajustamos con base en lo que sí genera clientes.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Nuestro Enfoque -->
+    <section id="nosotros" class="process section-padding">
+      <div class="container-wide">
+        <div class="section-header-row reveal" style="margin-bottom: 0;">
+          <div>
+            <div class="eyebrow mb-5">Nuestro enfoque</div>
+            <h2 class="section-heading">Cómo construimos tu<br>presencia desde cero.</h2>
+          </div>
+          <p style="max-width: 384px; font-size: 14px; line-height: 1.75; opacity: 0.8;">
+            Un proceso paso a paso para ordenar tu marca, ganar confianza y escalar ventas sin quemar presupuesto antes de tiempo.
+          </p>
+        </div>
+
+        <div class="phases-grid">
+          <div class="phase reveal reveal-delay-1">
+            <span class="process-number">01</span>
+            <p class="process-label">Paso 01</p>
+            <h3 class="phase-title">Ordenamos tu base</h3>
+            <p class="phase-desc">Definimos tu imagen, mensajes y configuramos tus redes o sitio web para que tu marca proyecte claridad y confianza.</p>
+            <p class="process-detail">Entrega: perfiles optimizados o sitio base</p>
+          </div>
+
+          <div class="phase reveal reveal-delay-2">
+            <span class="process-number">02</span>
+            <p class="process-label">Paso 02</p>
+            <h3 class="phase-title">Construimos presencia</h3>
+            <p class="phase-desc">Creamos y publicamos contenido constante para generar confianza sin gastar miles en pauta desde el día uno.</p>
+            <p class="process-detail">Entrega: calendario mensual y piezas listas</p>
+          </div>
+
+          <div class="phase reveal reveal-delay-3">
+            <span class="process-number">03</span>
+            <p class="process-label">Paso 03</p>
+            <h3 class="phase-title">Medimos y optimizamos</h3>
+            <p class="phase-desc">Revisamos cada mes qué publicaciones y canales funcionan mejor con datos reales para ajustar el rumbo.</p>
+            <p class="process-detail">Entrega: reporte mensual claro y accionable</p>
+          </div>
+
+          <div class="phase reveal reveal-delay-3">
+            <span class="process-number">04</span>
+            <p class="process-label">Paso 04</p>
+            <h3 class="phase-title">Escalamos ventas</h3>
+            <p class="phase-desc">Activamos campañas o sistemas de medición para multiplicar tus clientes con presupuestos controlados.</p>
+            <p class="process-detail">Entrega: pauta activa y seguimiento de prospectos</p>
+          </div>
+        </div>
+
+        <div class="deliverables-wrap reveal">
+          <div class="eyebrow">Qué recibes siempre</div>
+          <div class="deliverables-grid">
+            <div class="deliverable">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Plan de trabajo claro por escrito
+            </div>
+            <div class="deliverable">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Calendario de publicaciones mensual
+            </div>
+            <div class="deliverable">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Canales listos para recibir prospectos
+            </div>
+            <div class="deliverable">
+              <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              Reporte mensual con lectura sencilla
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sectores -->
+    <section id="sectores" class="container-wide section-padding">
+      <div class="section-header-row reveal">
+        <div>
+          <div class="eyebrow mb-5">Para quién trabajamos</div>
+          <h2 class="section-heading">Cada proyecto<br>habla distinto.</h2>
+        </div>
+        <p class="text-muted" style="max-width: 330px; font-size: 14px; line-height: 1.75;">
+          Adaptamos el mensaje, el ritmo y el modelo de trabajo a lo que tu negocio o marca personal necesita hoy.
+        </p>
+      </div>
+
+      <div class="sectors-grid">
+        <article class="sector-card reveal reveal-delay-1">
+          <div class="sector-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 15px; font-weight: 700;">Autores, creadores y marcas personales</h3>
+            <p class="mt-2 text-muted" style="font-size: 13px; line-height: 1.6;">Presencia auténtica, comunidad fiel y canales claros para vender libros, cursos o servicios.</p>
+          </div>
+        </article>
+
+        <article class="sector-card reveal reveal-delay-2">
+          <div class="sector-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 15px; font-weight: 700;">Servicios locales y transporte</h3>
+            <p class="mt-2 text-muted" style="font-size: 13px; line-height: 1.6;">Confianza, presencia en Google y mensajes directos por WhatsApp para cerrar más servicios.</p>
+          </div>
+        </article>
+
+        <article class="sector-card reveal reveal-delay-3">
+          <div class="sector-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 21v-5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v5"/><path d="M17.774 10.31a1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.451 0 1.12 1.12 0 0 0-1.548 0 2.5 2.5 0 0 1-3.452 0 1.12 1.12 0 0 0-1.549 0 2.5 2.5 0 0 1-3.77-3.248l2.889-4.184A2 2 0 0 1 7 2h10a2 2 0 0 1 1.653.873l2.895 4.192a2.5 2.5 0 0 1-3.774 3.244"/><path d="M4 10.95V19a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8.05"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 15px; font-weight: 700;">Emprendimientos y tiendas</h3>
+            <p class="mt-2 text-muted" style="font-size: 13px; line-height: 1.6;">Catálogos ordenados, contenido constante y promociones que sí mueven el inventario.</p>
+          </div>
+        </article>
+
+        <article class="sector-card reveal reveal-delay-1">
+          <div class="sector-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m16 2-2.3 2.3a3 3 0 0 0 0 4.2l1.8 1.8a3 3 0 0 0 4.2 0L22 8"/><path d="M15 15 3.3 3.3a4.2 4.2 0 0 0 0 6l7.3 7.3c.7.7 2 .7 2.8 0L15 15Zm0 0 7 7"/><path d="m2.1 21.8 6.4-6.3"/><path d="m19 5-7 7"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 15px; font-weight: 700;">Restaurantes y cafés</h3>
+            <p class="mt-2 text-muted" style="font-size: 13px; line-height: 1.6;">Que te descubran en tu zona hoy y te visiten esta misma semana.</p>
+          </div>
+        </article>
+
+        <article class="sector-card reveal reveal-delay-2">
+          <div class="sector-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/><path d="M3.22 13H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 15px; font-weight: 700;">Salud, bienestar y consultorios</h3>
+            <p class="mt-2 text-muted" style="font-size: 13px; line-height: 1.6;">Información clara que genera confianza y llena tu agenda con pacientes adecuados.</p>
+          </div>
+        </article>
+
+        <article class="sector-card reveal reveal-delay-3">
+          <div class="sector-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+          </div>
+          <div>
+            <h3 style="font-size: 15px; font-weight: 700;">Educación, talleres y consultoría</h3>
+            <p class="mt-2 text-muted" style="font-size: 13px; line-height: 1.6;">Más inscripciones y citas gracias a un mensaje claro y una landing page bien armada.</p>
+          </div>
+        </article>
+      </div>
+
+      <p class="mt-8 text-muted reveal" style="max-width: 672px; font-size: 13px;">
+        ¿Tu giro no aparece aquí? Escríbenos y cuéntanos cómo vendes: nos adaptamos rápido a tu operación.
+      </p>
+    </section>
+
+    <!-- Preguntas Frecuentes (FAQ) -->
+    <section id="preguntas" class="faq-band section-padding">
+      <div class="container-wide faq-layout">
+        <div class="reveal">
+          <div class="eyebrow mb-5">Antes de escribir</div>
+          <h2 class="section-heading">Preguntas<br>frecuentes.</h2>
+          <p class="mt-6 text-muted" style="max-width: 320px; font-size: 14px; line-height: 1.75;">
+            Dudas comunes sobre nuestros planes, la modalidad Growth Partner y cómo empezamos desde cero.
+          </p>
+          <a href="#contacto" class="btn btn-outline">
+            Preguntar lo que sea
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+          </a>
+        </div>
+
+        <div class="faq-list reveal reveal-delay-1">
+          <details class="faq-item">
+            <summary>
+              <span>¿Cómo funciona exactamente el modelo Growth Partner?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">Pagas una base mensual (o pago único en web) más accesible y compartimos un porcentaje únicamente sobre las ventas o servicios cerrados que podamos rastrear mediante enlaces, códigos o canales digitales. Requiere una breve evaluación previa para confirmar que tu producto o servicio ya está listo para venderse.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>¿Puedo empezar si todavía no tengo redes ni página web?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">Sí, justamente nos especializamos en ayudar a marcas y negocios a arrancar desde cero. En el Paso 01 ordenamos tu imagen, mensajes y dejamos configurados tus perfiles o tu sitio web a tu nombre.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>¿En los planes de publicidad está incluido el saldo de Meta o Google?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">No. Nuestra tarifa cubre la configuración, optimización semanal y reporte. El presupuesto de anuncios lo pagas directamente con tu tarjeta a Meta o Google, así siempre tienes control y transparencia total de cuánto inviertes.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>¿En el Sitio Web Express se incluye dominio y hosting?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">No están incluidos en el precio, pero te guiamos paso a paso para comprarlos directamente a tu nombre. De esa forma tú siempre eres dueño al 100% de tu dominio y tu sitio web.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>¿En cuánto tiempo se ven resultados?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">La publicidad pagada puede traer los primeros mensajes en pocas semanas. El contenido orgánico en redes construye confianza mes a mes. Desde el inicio te decimos qué esperar de cada canal sin promesas mágicas.</p>
+          </details>
+
+          <details class="faq-item">
+            <summary>
+              <span>¿Con quién voy a tratar durante el proyecto?</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+            </summary>
+            <p class="faq-answer">Directamente con el equipo que ejecuta tu proyecto. Sin intermediarios, sin tickets eternos y con comunicación clara por WhatsApp y reportes mensuales.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="container-wide section-padding">
+      <div class="contact-layout">
+        <div class="reveal">
+          <div class="eyebrow mb-5">El siguiente paso</div>
+          <h2 class="section-heading">Las buenas ideas<br>empiezan con una<br><span class="text-primary">conversación.</span></h2>
+          <p class="mt-6 text-muted" style="max-width: 384px; font-size: 14px; line-height: 1.75;">
+            Cuéntanos qué vendes, en qué etapa estás y qué plan o modalidad te llama la atención. Te respondemos claro y sin rodeos.
+          </p>
+
+          <div class="direct-contact-box">
+            <a href="https://wa.me/525665062699?text=Hola%2C%20equipo%20de%20EG%20NEXUS.%20Vi%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20platicar%20sobre%20mi%20proyecto%20y%20sus%20planes." target="_blank" rel="noopener noreferrer" class="direct-contact-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              <span><strong>WhatsApp directo:</strong> +52 56 6506 2699</span>
+            </a>
+            <a href="mailto:growth@egnexus.com.mx?subject=Consulta%20sobre%20planes%20de%20EG%20NEXUS" class="direct-contact-link">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              <span><strong>Correo:</strong> growth@egnexus.com.mx</span>
+            </a>
+            <div class="social-pills-grid">
+              <a href="https://www.instagram.com/eg_nexus/" target="_blank" rel="noopener noreferrer" class="direct-contact-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                <span><strong>Instagram:</strong> @eg_nexus</span>
+              </a>
+              <a href="https://www.facebook.com/profile.php?id=61595029054017" target="_blank" rel="noopener noreferrer" class="direct-contact-link">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <span><strong>Facebook:</strong> EG NEXUS</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="next-steps-wrap">
+            <div class="eyebrow">Qué pasa después</div>
+            <ol class="next-steps">
+              <li class="next-step">
+                <span>1</span>
+                <div>
+                  <strong style="font-size: 14px; font-weight: 600;">Leemos tu mensaje</strong>
+                  <p class="mt-2 text-muted" style="font-size: 13px; line-height: 1.6;">Revisamos tu proyecto y evaluamos qué plan o modalidad se ajusta mejor.</p>
+                </div>
+              </li>
+              <li class="next-step">
+                <span>2</span>
+                <div>
+                  <strong style="font-size: 14px; font-weight: 600;">Plática breve de 20 a 30 minutos</strong>
+                  <p class="mt-2 text-muted" style="font-size: 13px; line-height: 1.6;">Sin presentaciones eternas: preguntas concretas sobre tu marca y tus metas.</p>
+                </div>
+              </li>
+              <li class="next-step">
+                <span>3</span>
+                <div>
+                  <strong style="font-size: 14px; font-weight: 600;">Propuesta clara</strong>
+                  <p class="mt-2 text-muted" style="font-size: 13px; line-height: 1.6;">Alcance, tiempos, modalidad elegida y qué vamos a medir desde el primer mes.</p>
+                </div>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <form id="contact-form" class="contact-form reveal reveal-delay-1">
+          <div class="form-row-2">
+            <label>
+              <span class="field-label">Tu nombre *</span>
+              <input class="form-field" type="text" name="name" autocomplete="name" placeholder="¿Cómo te llamas?" required>
+            </label>
+            <label>
+              <span class="field-label">Correo electrónico *</span>
+              <input class="form-field" type="email" name="email" autocomplete="email" placeholder="tu@correo.com" required>
+            </label>
+          </div>
+
+          <label>
+            <span class="field-label">¿En qué podemos ayudarte?</span>
+            <select class="form-field" name="service">
+              <option value="Plan Impulso Inicial (Redes)">Plan Impulso Inicial (Redes)</option>
+              <option value="Plan Presencia Activa (Redes)">Plan Presencia Activa (Redes)</option>
+              <option value="Sitio Web Express">Sitio Web Express</option>
+              <option value="Gestión de Pauta (Ads)">Gestión de Pauta (Ads)</option>
+              <option value="Modelo Growth Partner (Base + %)">Modelo Growth Partner (Base + %)</option>
+              <option value="Aún no lo tengo claro" selected>Aún no lo tengo claro</option>
+            </select>
+          </label>
+
+          <label>
+            <span class="field-label">Cuéntanos sobre tu proyecto *</span>
+            <textarea name="project" class="form-field" placeholder="¿Qué ofreces, en qué etapa estás y si te interesa Tarifa Fija o Growth Partner?" required></textarea>
+          </label>
+
+          <label>
+            <span class="field-label">¿Cuándo te gustaría empezar?</span>
+            <select class="form-field" name="timing">
+              <option value="Lo antes posible">Lo antes posible</option>
+              <option value="En el próximo mes">En el próximo mes</option>
+              <option value="Estoy explorando opciones">Estoy explorando opciones</option>
+            </select>
+          </label>
+
+          <label class="consent-check">
+            <input type="checkbox" name="privacy_consent" required>
+            <span>He leído y acepto el <a href="aviso-privacidad.html">Aviso de privacidad</a> para el tratamiento de mis datos de contacto. *</span>
+          </label>
+
+          <div class="form-actions-grid">
+            <button type="submit" data-channel="whatsapp" class="btn btn-whatsapp">
+              Enviar por WhatsApp
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </button>
+            <button type="submit" data-channel="email" class="btn btn-email">
+              Enviar por Correo
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </button>
+          </div>
+
+          <p class="text-muted" style="font-size: 12px; line-height: 1.6;">
+            Al enviar, se abrirá directamente tu WhatsApp o cliente de correo con los datos de tu proyecto listos para enviarse a nuestro equipo.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container-wide footer-grid">
+      <div>
+        <a href="#inicio" class="brand">
+          <img src="logo.jpg" alt="Logotipo de EG NEXUS en pie de página" class="brand-logo" width="40" height="40">
+          <span>EG <span class="brand-accent">NEXUS</span></span>
+        </a>
+        <p class="mt-5 text-muted" style="max-width: 320px; font-size: 13px; line-height: 1.75;">
+          Estudio digital ágil en México. Impulsamos marcas, creadores y negocios en crecimiento con diseño web, redes sociales y pauta basada en datos claros.
+        </p>
+        <div class="footer-socials">
+          <a href="https://www.instagram.com/eg_nexus/" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Seguir a EG NEXUS en Instagram">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61595029054017" target="_blank" rel="noopener noreferrer" class="footer-social-btn" aria-label="Seguir a EG NEXUS en Facebook">
+            <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            Facebook
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <p class="footer-title">Servicios y Planes</p>
+        <a href="#servicios" class="footer-link">Redes sociales</a>
+        <a href="#servicios" class="footer-link">Diseño web y landing pages</a>
+        <a href="#servicios" class="footer-link">Meta Ads y Google Ads</a>
+        <a href="#planes" class="footer-link">Tarifa fija y Growth Partner</a>
+      </div>
+
+      <div>
+        <p class="footer-title">Explora</p>
+        <a href="#planes" class="footer-link">Planes y precios</a>
+        <a href="#equipo" class="footer-link">Equipo</a>
+        <a href="#nosotros" class="footer-link">Nuestro enfoque</a>
+        <a href="#sectores" class="footer-link">Sectores</a>
+        <a href="#preguntas" class="footer-link">Preguntas frecuentes</a>
+        <a href="#contacto" class="footer-link">Contacto</a>
+        <a href="aviso-privacidad.html" class="footer-link">Aviso de privacidad</a>
+      </div>
+
+      <div>
+        <p class="footer-title">Escríbenos</p>
+        <a href="https://wa.me/525665062699?text=Hola%2C%20equipo%20de%20EG%20NEXUS.%20Vi%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20platicar%20sobre%20mi%20proyecto%20y%20sus%20planes." target="_blank" rel="noopener noreferrer" class="footer-link">WhatsApp: +52 56 6506 2699</a>
+        <a href="mailto:growth@egnexus.com.mx" class="footer-link">growth@egnexus.com.mx</a>
+        <a href="https://egnexus.com.mx" class="footer-link">egnexus.com.mx</a>
+        <p class="mt-5 text-muted" style="font-size: 12px; line-height: 1.6;">
+          Respondemos a los mensajes dentro de las próximas 24 horas hábiles.
+        </p>
+      </div>
+    </div>
+
+    <div class="container-wide footer-bottom">
+      <span>© 2026 EG NEXUS. Todos los derechos reservados.</span>
+      <span style="display: flex; flex-wrap: wrap; align-items: center; gap: 16px;">
+        <a href="aviso-privacidad.html">Aviso de privacidad</a>
+        <span>·</span>
+        <span>Hecho con intención y datos claros.</span>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Botón flotante WhatsApp -->
+  <a href="https://wa.me/525665062699?text=Hola%2C%20equipo%20de%20EG%20NEXUS.%20Vi%20su%20sitio%20web%20y%20me%20gustar%C3%ADa%20platicar%20sobre%20mi%20proyecto%20y%20sus%20planes." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Contactar a EG NEXUS por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    <span>WhatsApp</span>
+  </a>
+
+  <!-- Interactividad en Vanilla JavaScript -->
+  <script>
+    (function () {
+      // 1. Barra de progreso de lectura y sombra de header al hacer scroll
+      var progressBar = document.getElementById('scroll-progress');
+      var siteHeader = document.getElementById('site-header');
+
+      window.addEventListener('scroll', function () {
+        var scrollTop = window.scrollY || document.documentElement.scrollTop;
+        var docHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+
+        if (progressBar) {
+          progressBar.style.width = percent + '%';
+        }
+        if (siteHeader) {
+          if (scrollTop > 16) {
+            siteHeader.classList.add('scrolled');
+          } else {
+            siteHeader.classList.remove('scrolled');
+          }
+        }
+      }, { passive: true });
+
+      // 2. Animaciones suaves al recorrer la página (IntersectionObserver)
+      var revealElements = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window && revealElements.length > 0) {
+        var observer = new IntersectionObserver(function (entries, obs) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -30px 0px' });
+
+        Array.prototype.slice.call(revealElements).forEach(function (el) {
+          observer.observe(el);
+        });
+      } else {
+        Array.prototype.slice.call(revealElements).forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+
+      // 3. Navegación móvil (con redes sociales incluidas)
+      var menuBtn = document.querySelector('.mobile-menu-btn');
+      if (menuBtn) {
+        menuBtn.addEventListener('click', function () {
+          var existingNav = document.querySelector('.mobile-navigation');
+          var isOpen = menuBtn.getAttribute('aria-expanded') === 'true';
+
+          if (existingNav) {
+            existingNav.remove();
+          } else {
+            var mobileNav = document.createElement('nav');
+            mobileNav.className = 'mobile-navigation';
+            mobileNav.setAttribute('aria-label', 'Navegación móvil');
+
+            var links = document.querySelectorAll('.desktop-nav a[href^="#"]');
+            Array.prototype.slice.call(links).forEach(function (link) {
+              var clone = link.cloneNode(true);
+              clone.addEventListener('click', function () {
+                mobileNav.remove();
+                menuBtn.setAttribute('aria-expanded', 'false');
+              });
+              mobileNav.appendChild(clone);
+            });
+
+            var socialsRow = document.createElement('div');
+            socialsRow.className = 'mobile-socials-row';
+            socialsRow.innerHTML =
+              '<a href="https://www.instagram.com/eg_nexus/" target="_blank" rel="noopener noreferrer" class="footer-social-btn">Instagram</a>' +
+              '<a href="https://www.facebook.com/profile.php?id=61595029054017" target="_blank" rel="noopener noreferrer" class="footer-social-btn">Facebook</a>';
+            mobileNav.appendChild(socialsRow);
+
+            menuBtn.closest('header').appendChild(mobileNav);
+          }
+          menuBtn.setAttribute('aria-expanded', String(!isOpen));
+        });
+      }
+
+      // 4. Preselección automática de servicio o plan desde tarjetas
+      var ctaButtons = document.querySelectorAll('.service-cta-btn, .plan-cta-btn');
+      Array.prototype.slice.call(ctaButtons).forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var contactSection = document.getElementById('contacto');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
+          var selectField = document.querySelector('form select[name="service"]');
+          var targetService = btn.getAttribute('data-service');
+
+          if (selectField && targetService) {
+            for (var i = 0; i < selectField.options.length; i++) {
+              if (selectField.options[i].value === targetService) {
+                selectField.selectedIndex = i;
+                break;
+              }
+            }
+          }
+        });
+      });
+
+      // 5. Validación y envío del formulario (WhatsApp / Email)
+      var form = document.getElementById('contact-form');
+      var activeChannel = 'whatsapp';
+
+      if (form) {
+        var submitButtons = form.querySelectorAll('button[type="submit"]');
+        Array.prototype.slice.call(submitButtons).forEach(function (btn) {
+          btn.addEventListener('click', function () {
+            activeChannel = btn.getAttribute('data-channel') || 'whatsapp';
+          });
+        });
+
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          var nameInput = form.querySelector('[name="name"]');
+          var emailInput = form.querySelector('[name="email"]');
+          var serviceInput = form.querySelector('[name="service"]');
+          var timingInput = form.querySelector('[name="timing"]');
+          var projectInput = form.querySelector('[name="project"]');
+          var consentCheckbox = form.querySelector('[name="privacy_consent"]');
+
+          var name = nameInput ? nameInput.value.trim() : '';
+          var email = emailInput ? emailInput.value.trim() : '';
+          var service = serviceInput ? serviceInput.value.trim() : '';
+          var timing = timingInput ? timingInput.value.trim() : '';
+          var project = projectInput ? projectInput.value.trim() : '';
+          var consentChecked = consentCheckbox ? consentCheckbox.checked : false;
+
+          var statusMsg = form.querySelector('[role="status"]');
+          if (!statusMsg) {
+            statusMsg = document.createElement('p');
+            statusMsg.setAttribute('role', 'status');
+            statusMsg.style.whiteSpace = 'pre-line';
+            statusMsg.style.fontSize = '13px';
+            statusMsg.style.fontWeight = '500';
+            form.appendChild(statusMsg);
+          }
+
+          if (!name || !email || !project || !consentChecked) {
+            statusMsg.style.color = 'var(--destructive)';
+            statusMsg.textContent = 'Por favor completa todos los campos obligatorios (*) y acepta el Aviso de privacidad antes de continuar.';
+            if (typeof form.reportValidity === 'function') {
+              form.reportValidity();
+            }
+            return;
+          }
+
+          statusMsg.style.color = 'var(--brand-green)';
+
+          var lines = [
+            'Hola, equipo de EG NEXUS. Vi su sitio web y me gustaría impulsar mi proyecto con ustedes:',
+            '',
+            '• Nombre: ' + name,
+            '• Correo: ' + email,
+            '• Opción de interés: ' + service,
+            '• Cuándo empezar: ' + timing,
+            '• Proyecto: ' + project
+          ];
+          var formattedText = lines.join('\n');
+
+          if (activeChannel === 'email') {
+            var subject = encodeURIComponent('Solicitud de proyecto: ' + service + ' - ' + name);
+            var body = encodeURIComponent(formattedText);
+            window.location.href = 'mailto:growth@egnexus.com.mx?subject=' + subject + '&body=' + body;
+            statusMsg.textContent = 'Abriendo tu cliente de correo para enviar tu solicitud a growth@egnexus.com.mx...';
+          } else {
+            var waUrl = 'https://api.whatsapp.com/send?phone=525665062699&text=' + encodeURIComponent(formattedText);
+            window.open(waUrl, '_blank', 'noopener,noreferrer');
+            statusMsg.textContent = 'Redirigiendo a WhatsApp para enviar tu solicitud a EG NEXUS...';
+          }
+        });
+      }
+    })();
+  </script>
+
+  <!-- Datos Estructurados Schema.org (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "EG NEXUS",
+    "alternateName": "EG NEXUS Digital Growth Marketing",
+    "url": "https://egnexus.com.mx",
+    "logo": "https://egnexus.com.mx/logo.jpg",
+    "description": "Impulsamos tu negocio en redes sociales y web con estrategia y datos claros. Planes fijos y modelo Growth Partner por resultados para marcas en crecimiento en México.",
+    "email": "growth@egnexus.com.mx",
+    "telephone": "+52-56-6506-2699",
+    "sameAs": [
+      "https://www.instagram.com/eg_nexus/",
+      "https://www.facebook.com/profile.php?id=61595029054017"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+52-56-6506-2699",
+        "email": "growth@egnexus.com.mx",
+        "contactType": "customer service",
+        "areaServed": "MX",
+        "availableLanguage": ["Spanish"]
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios y Planes de EG NEXUS",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Gestión y Creación de Contenido para Redes Sociales",
+            "description": "Creación de piezas gráficas y textos desde cero, calendario mensual y administración de hasta 3 redes sociales."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Diseño de Páginas Web y Landing Pages",
+            "description": "Sitios web informativos rápidos, claros, adaptados a celular y listos para captar clientes por WhatsApp o formulario."
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Campañas de Publicidad Inicial (Meta Ads y Google Ads)",
+            "description": "Configuración y lanzamiento de primeras campañas enfocadas en mensajes directos o clientes locales, con presupuestos controlados y reportes fáciles de entender."
+          }
+        }
+      ]
+    }
+  }
+  </script>
+</body>
+</html>
